@@ -7,12 +7,14 @@
 //
 
 #import "RTWAppDelegate.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation RTWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [GMSServices provideAPIKey:@"AIzaSyA0g2Dhwmn_rjrurdG1DnsHtCWCEoQpAis"];
+
     return YES;
 }
 							
