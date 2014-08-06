@@ -7,6 +7,7 @@
 //
 
 #import "RTWmapViewController.h"
+#import "RTWscheduleTableViewController.h"
 
 @interface RTWmapViewController ()
 
@@ -18,6 +19,10 @@
 {
     
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:218/255.0 green:174/255.0 blue:77/255.0 alpha:1];
+    
+    self.navigationItem.title = _routeID;
 
     [self loadMapView];
     
@@ -34,7 +39,7 @@
     CLLocationCoordinate2D shuttleCoordinates = [self loadShuttlesCurrentLocation];
     
     // Get location of shuttle
-    GMSCameraPosition *shuttle = [GMSCameraPosition cameraWithLatitude:shuttleCoordinates.latitude longitude:shuttleCoordinates.longitude zoom:15];
+    GMSCameraPosition *shuttle = [GMSCameraPosition cameraWithLatitude:shuttleCoordinates.latitude longitude:shuttleCoordinates.longitude zoom:_zoomLevel];
     
     // Init mapView with settings
     self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:shuttle];
@@ -53,7 +58,7 @@
 {
     
     // Get location from file off server
-    NSURL *serverURLPath = [NSURL URLWithString:@"http://www.shuttle.cs.wfu/iPhone/blackLine"];
+    /*NSURL *serverURLPath = [NSURL URLWithString:@"http://www.shuttle.cs.wfu/iPhone/blackLine"];
     
     NSString *fileContents = [NSString stringWithContentsOfURL:serverURLPath encoding:NSUTF8StringEncoding error:NULL];
     
@@ -61,9 +66,9 @@
     
     // Convert file coordinates to CLLocationCoordinate2D
     CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake([[fileCoordinates objectAtIndex:0] floatValue], [[fileCoordinates objectAtIndex:1] floatValue]);
-    
+    */
     // TEMPORARY COORDINATES
-    shuttleCoordinates = CLLocationCoordinate2DMake(36.129181, -80.258384);
+    CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake(36.129181, -80.258384);
     
     return shuttleCoordinates;
     
@@ -74,7 +79,7 @@
 {
     
     // Load file that contains coordinates of shuttle stops
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"downtownStops" ofType:@"csv"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Stops", _routeIDName] ofType:@"csv"];
     
     NSString *fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     
@@ -105,27 +110,52 @@
 {
     
     // Get route from csv file
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"downtownRoute" ofType:@"csv"];
+    NSString* path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Route", _routeIDName] ofType:@"csv"];
     
     NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     
     NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
     
     // Array of coordinates for route
-    CLLocationCoordinate2D routeCoordinates[[fileLines count]];
-    
+    GMSMutablePath *polylineCoordinates = [GMSMutablePath path];
+
     // Loop through csv file and get coordinates
     for (int i = 0; i < [fileLines count]; i++)
     {
         NSArray *lineItem = [fileLines[i] componentsSeparatedByString:@","];
-
-        CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake([[lineItem objectAtIndex:0] floatValue], [[lineItem objectAtIndex:1] floatValue]);
         
-        routeCoordinates[i] = coordinates;
+        [polylineCoordinates addCoordinate:CLLocationCoordinate2DMake([[lineItem objectAtIndex:0] floatValue], [[lineItem objectAtIndex:1] floatValue])];
         
     }
     
-    // Create polyline
+    // Create the polyline with coordinates and settings
+    GMSPolyline *polyline = [GMSPolyline polylineWithPath:polylineCoordinates];
+    polyline.map = _mapView;
+    polyline.strokeWidth = 8.f;
+    polyline.strokeColor = [UIColor colorWithRed:0/255.0 green:179/255.0 blue:253/255.0 alpha:1];
+
+}
+
+// Segue to scheduleView by passing a route ID name
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    // If making a segue to a mapView
+    if ([[segue identifier] isEqualToString:@"scheduleVC"])
+    {
+        
+        UINavigationController *navigationController = segue.destinationViewController;
+        RTWscheduleTableViewController *scheduleVC = (RTWscheduleTableViewController * )navigationController.topViewController;
+        
+        scheduleVC.routeID = _routeID;
+        scheduleVC.routeIDName = _routeIDName;
+        
+    }
+    
+}
+
+- (IBAction)viewDidUnwind:(UIStoryboardSegue *)segue
+{
     
 }
 

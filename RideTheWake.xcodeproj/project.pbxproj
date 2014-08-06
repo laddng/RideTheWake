@@ -7,8 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD146E741986C749004D9628 /* downtownRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD146E731986C749004D9628 /* downtownRoute.csv */; };
-		DDBA633D1981CD1E00B2C016 /* downtownStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DDBA633C1981CD1E00B2C016 /* downtownStops.csv */; };
+		DD0EB70A198FE5DD00A238AB /* RTWrouteInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0EB709198FE5DD00A238AB /* RTWrouteInformation.m */; };
+		DD0EB70C19901BDB00A238AB /* blackLineSchedule in Resources */ = {isa = PBXBuildFile; fileRef = DD0EB70B19901BDB00A238AB /* blackLineSchedule */; };
+		DD0EB70F19901DE400A238AB /* grayNightRoute in Resources */ = {isa = PBXBuildFile; fileRef = DD0EB70E19901DE400A238AB /* grayNightRoute */; };
+		DD0EB71119901E0000A238AB /* grayNightStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD0EB71019901E0000A238AB /* grayNightStops.csv */; };
+		DD0EB71319901F3000A238AB /* freshmenLineSchedule in Resources */ = {isa = PBXBuildFile; fileRef = DD0EB71219901F3000A238AB /* freshmenLineSchedule */; };
+		DD1FD5861989953A00ED6AEF /* blackStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5801989953A00ED6AEF /* blackStops.csv */; };
+		DD1FD5871989953A00ED6AEF /* downtownStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5811989953A00ED6AEF /* downtownStops.csv */; };
+		DD1FD5881989953A00ED6AEF /* freshmenStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5821989953A00ED6AEF /* freshmenStops.csv */; };
+		DD1FD5891989953A00ED6AEF /* goldStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5831989953A00ED6AEF /* goldStops.csv */; };
+		DD1FD58A1989953A00ED6AEF /* grayDayStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5841989953A00ED6AEF /* grayDayStops.csv */; };
+		DD1FD58B1989953A00ED6AEF /* hanesStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5851989953A00ED6AEF /* hanesStops.csv */; };
+		DD1FD5A31989954E00ED6AEF /* wfu_logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5941989954E00ED6AEF /* wfu_logo.gif */; };
+		DD1FD5A41989954E00ED6AEF /* blackRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5961989954E00ED6AEF /* blackRoute.csv */; };
+		DD1FD5A51989954E00ED6AEF /* downtownRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5971989954E00ED6AEF /* downtownRoute.csv */; };
+		DD1FD5A61989954E00ED6AEF /* freshmenRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5981989954E00ED6AEF /* freshmenRoute.csv */; };
+		DD1FD5A71989954E00ED6AEF /* goldRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5991989954E00ED6AEF /* goldRoute.csv */; };
+		DD1FD5A81989954E00ED6AEF /* grayDayRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD59A1989954E00ED6AEF /* grayDayRoute.csv */; };
+		DD1FD5A91989954E00ED6AEF /* hanesRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD59B1989954E00ED6AEF /* hanesRoute.csv */; };
+		DDBC46F2198EE81B00D24FE5 /* shuttleIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DDBC46F0198EE81B00D24FE5 /* shuttleIcon.png */; };
+		DDBC46F3198EE81B00D24FE5 /* shuttleIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDBC46F1198EE81B00D24FE5 /* shuttleIcon@2x.png */; };
+		DDBC46F5198EEC3600D24FE5 /* shuttleNamesAndStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DDBC46F4198EEC3600D24FE5 /* shuttleNamesAndStops.csv */; };
 		DDC0F5321986DDAD0090ED7D /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC0F5311986DDAD0090ED7D /* GoogleMaps.framework */; };
 		DDC0F5341986DDC40090ED7D /* GoogleMaps.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC0F5331986DDC40090ED7D /* GoogleMaps.bundle */; };
 		DDC0F5361986DE090090ED7D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC0F5351986DE090090ED7D /* AVFoundation.framework */; };
@@ -38,6 +57,10 @@
 		DDDB051E19817DA00074DC96 /* RideTheWakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDB051D19817DA00074DC96 /* RideTheWakeTests.m */; };
 		DDDB052A19817DB20074DC96 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDB052919817DB20074DC96 /* CoreLocation.framework */; };
 		DDDB052D19817E170074DC96 /* RTWmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDB052C19817E170074DC96 /* RTWmapViewController.m */; };
+		DDF0C65E198810CD003DE935 /* RTWmainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0C65D198810CD003DE935 /* RTWmainTableViewController.m */; };
+		DDF0C6611988200C003DE935 /* RTWrouteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0C6601988200C003DE935 /* RTWrouteTableViewCell.m */; };
+		DDF0C664198821D4003DE935 /* RTWscheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0C663198821D4003DE935 /* RTWscheduleTableViewController.m */; };
+		DDF0C6A4198841B3003DE935 /* RTWtimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0C6A3198841B3003DE935 /* RTWtimeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +74,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DD146E731986C749004D9628 /* downtownRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = downtownRoute.csv; sourceTree = "<group>"; };
-		DDBA633C1981CD1E00B2C016 /* downtownStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = downtownStops.csv; sourceTree = "<group>"; };
+		DD0EB708198FE5DD00A238AB /* RTWrouteInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWrouteInformation.h; sourceTree = "<group>"; };
+		DD0EB709198FE5DD00A238AB /* RTWrouteInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWrouteInformation.m; sourceTree = "<group>"; };
+		DD0EB70B19901BDB00A238AB /* blackLineSchedule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = blackLineSchedule; path = Schedules/blackLineSchedule; sourceTree = "<group>"; };
+		DD0EB70E19901DE400A238AB /* grayNightRoute */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grayNightRoute; sourceTree = "<group>"; };
+		DD0EB71019901E0000A238AB /* grayNightStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grayNightStops.csv; sourceTree = "<group>"; };
+		DD0EB71219901F3000A238AB /* freshmenLineSchedule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = freshmenLineSchedule; path = Schedules/freshmenLineSchedule; sourceTree = "<group>"; };
+		DD1FD5801989953A00ED6AEF /* blackStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blackStops.csv; sourceTree = "<group>"; };
+		DD1FD5811989953A00ED6AEF /* downtownStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = downtownStops.csv; sourceTree = "<group>"; };
+		DD1FD5821989953A00ED6AEF /* freshmenStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = freshmenStops.csv; sourceTree = "<group>"; };
+		DD1FD5831989953A00ED6AEF /* goldStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = goldStops.csv; sourceTree = "<group>"; };
+		DD1FD5841989953A00ED6AEF /* grayDayStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grayDayStops.csv; sourceTree = "<group>"; };
+		DD1FD5851989953A00ED6AEF /* hanesStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hanesStops.csv; sourceTree = "<group>"; };
+		DD1FD5941989954E00ED6AEF /* wfu_logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wfu_logo.gif; sourceTree = "<group>"; };
+		DD1FD5961989954E00ED6AEF /* blackRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blackRoute.csv; sourceTree = "<group>"; };
+		DD1FD5971989954E00ED6AEF /* downtownRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = downtownRoute.csv; sourceTree = "<group>"; };
+		DD1FD5981989954E00ED6AEF /* freshmenRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = freshmenRoute.csv; sourceTree = "<group>"; };
+		DD1FD5991989954E00ED6AEF /* goldRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = goldRoute.csv; sourceTree = "<group>"; };
+		DD1FD59A1989954E00ED6AEF /* grayDayRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grayDayRoute.csv; sourceTree = "<group>"; };
+		DD1FD59B1989954E00ED6AEF /* hanesRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hanesRoute.csv; sourceTree = "<group>"; };
+		DDBC46F0198EE81B00D24FE5 /* shuttleIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuttleIcon.png; path = ../../../icons/shuttleIcon.png; sourceTree = "<group>"; };
+		DDBC46F1198EE81B00D24FE5 /* shuttleIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shuttleIcon@2x.png"; path = "../../../icons/shuttleIcon@2x.png"; sourceTree = "<group>"; };
+		DDBC46F4198EEC3600D24FE5 /* shuttleNamesAndStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = shuttleNamesAndStops.csv; path = ../shuttleNamesAndStops.csv; sourceTree = "<group>"; };
 		DDC0F5311986DDAD0090ED7D /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		DDC0F5331986DDC40090ED7D /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		DDC0F5351986DE090090ED7D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +131,14 @@
 		DDDB052919817DB20074DC96 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DDDB052B19817E170074DC96 /* RTWmapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWmapViewController.h; sourceTree = "<group>"; };
 		DDDB052C19817E170074DC96 /* RTWmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWmapViewController.m; sourceTree = "<group>"; };
+		DDF0C65C198810CD003DE935 /* RTWmainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWmainTableViewController.h; sourceTree = "<group>"; };
+		DDF0C65D198810CD003DE935 /* RTWmainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWmainTableViewController.m; sourceTree = "<group>"; };
+		DDF0C65F1988200C003DE935 /* RTWrouteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWrouteTableViewCell.h; sourceTree = "<group>"; };
+		DDF0C6601988200C003DE935 /* RTWrouteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWrouteTableViewCell.m; sourceTree = "<group>"; };
+		DDF0C662198821D4003DE935 /* RTWscheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWscheduleTableViewController.h; sourceTree = "<group>"; };
+		DDF0C663198821D4003DE935 /* RTWscheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWscheduleTableViewController.m; sourceTree = "<group>"; };
+		DDF0C6A2198841B3003DE935 /* RTWtimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWtimeTableViewCell.h; sourceTree = "<group>"; };
+		DDF0C6A3198841B3003DE935 /* RTWtimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWtimeTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +179,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD0EB70D19901BE400A238AB /* schedule */ = {
+			isa = PBXGroup;
+			children = (
+				DD0EB70B19901BDB00A238AB /* blackLineSchedule */,
+				DD0EB71219901F3000A238AB /* freshmenLineSchedule */,
+			);
+			name = schedule;
+			sourceTree = "<group>";
+		};
+		DD1FD57F1989953A00ED6AEF /* Stops */ = {
+			isa = PBXGroup;
+			children = (
+				DDBC46F4198EEC3600D24FE5 /* shuttleNamesAndStops.csv */,
+				DD1FD5801989953A00ED6AEF /* blackStops.csv */,
+				DD1FD5811989953A00ED6AEF /* downtownStops.csv */,
+				DD1FD5821989953A00ED6AEF /* freshmenStops.csv */,
+				DD1FD5831989953A00ED6AEF /* goldStops.csv */,
+				DD1FD5841989953A00ED6AEF /* grayDayStops.csv */,
+				DD0EB71019901E0000A238AB /* grayNightStops.csv */,
+				DD1FD5851989953A00ED6AEF /* hanesStops.csv */,
+			);
+			path = Stops;
+			sourceTree = "<group>";
+		};
+		DD1FD58C1989954E00ED6AEF /* img */ = {
+			isa = PBXGroup;
+			children = (
+				DDBC46F0198EE81B00D24FE5 /* shuttleIcon.png */,
+				DDBC46F1198EE81B00D24FE5 /* shuttleIcon@2x.png */,
+				DD1FD5941989954E00ED6AEF /* wfu_logo.gif */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		DD1FD5951989954E00ED6AEF /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				DD1FD5961989954E00ED6AEF /* blackRoute.csv */,
+				DD1FD5971989954E00ED6AEF /* downtownRoute.csv */,
+				DD1FD5981989954E00ED6AEF /* freshmenRoute.csv */,
+				DD1FD5991989954E00ED6AEF /* goldRoute.csv */,
+				DD1FD59A1989954E00ED6AEF /* grayDayRoute.csv */,
+				DD0EB70E19901DE400A238AB /* grayNightRoute */,
+				DD1FD59B1989954E00ED6AEF /* hanesRoute.csv */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
 		DDDB04E619817DA00074DC96 = {
 			isa = PBXGroup;
 			children = (
@@ -180,11 +279,23 @@
 				DDDB050119817DA00074DC96 /* RTWAppDelegate.h */,
 				DDDB050219817DA00074DC96 /* RTWAppDelegate.m */,
 				DDDB050419817DA00074DC96 /* Main.storyboard */,
+				DDF0C6A2198841B3003DE935 /* RTWtimeTableViewCell.h */,
+				DDF0C6A3198841B3003DE935 /* RTWtimeTableViewCell.m */,
+				DDF0C662198821D4003DE935 /* RTWscheduleTableViewController.h */,
+				DDF0C663198821D4003DE935 /* RTWscheduleTableViewController.m */,
+				DDF0C65F1988200C003DE935 /* RTWrouteTableViewCell.h */,
+				DDF0C6601988200C003DE935 /* RTWrouteTableViewCell.m */,
+				DDF0C65C198810CD003DE935 /* RTWmainTableViewController.h */,
+				DDF0C65D198810CD003DE935 /* RTWmainTableViewController.m */,
+				DD0EB708198FE5DD00A238AB /* RTWrouteInformation.h */,
+				DD0EB709198FE5DD00A238AB /* RTWrouteInformation.m */,
 				DDDB052B19817E170074DC96 /* RTWmapViewController.h */,
 				DDDB052C19817E170074DC96 /* RTWmapViewController.m */,
-				DD146E731986C749004D9628 /* downtownRoute.csv */,
-				DDBA633C1981CD1E00B2C016 /* downtownStops.csv */,
 				DDDB050A19817DA00074DC96 /* Images.xcassets */,
+				DD0EB70D19901BE400A238AB /* schedule */,
+				DD1FD58C1989954E00ED6AEF /* img */,
+				DD1FD5951989954E00ED6AEF /* Routes */,
+				DD1FD57F1989953A00ED6AEF /* Stops */,
 				DDDB04F919817DA00074DC96 /* Supporting Files */,
 			);
 			path = RideTheWake;
@@ -299,12 +410,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDBA633D1981CD1E00B2C016 /* downtownStops.csv in Resources */,
+				DD1FD5871989953A00ED6AEF /* downtownStops.csv in Resources */,
+				DD1FD5891989953A00ED6AEF /* goldStops.csv in Resources */,
+				DD1FD5881989953A00ED6AEF /* freshmenStops.csv in Resources */,
+				DD1FD5A61989954E00ED6AEF /* freshmenRoute.csv in Resources */,
+				DDBC46F2198EE81B00D24FE5 /* shuttleIcon.png in Resources */,
+				DD0EB70C19901BDB00A238AB /* blackLineSchedule in Resources */,
 				DDDB050B19817DA00074DC96 /* Images.xcassets in Resources */,
+				DD1FD58B1989953A00ED6AEF /* hanesStops.csv in Resources */,
+				DD1FD5A81989954E00ED6AEF /* grayDayRoute.csv in Resources */,
+				DD1FD5A31989954E00ED6AEF /* wfu_logo.gif in Resources */,
+				DD1FD58A1989953A00ED6AEF /* grayDayStops.csv in Resources */,
+				DD1FD5861989953A00ED6AEF /* blackStops.csv in Resources */,
+				DD1FD5A71989954E00ED6AEF /* goldRoute.csv in Resources */,
+				DDBC46F3198EE81B00D24FE5 /* shuttleIcon@2x.png in Resources */,
+				DD1FD5A91989954E00ED6AEF /* hanesRoute.csv in Resources */,
+				DD0EB71119901E0000A238AB /* grayNightStops.csv in Resources */,
 				DDDB04FD19817DA00074DC96 /* InfoPlist.strings in Resources */,
-				DD146E741986C749004D9628 /* downtownRoute.csv in Resources */,
+				DD0EB71319901F3000A238AB /* freshmenLineSchedule in Resources */,
+				DD0EB70F19901DE400A238AB /* grayNightRoute in Resources */,
+				DDBC46F5198EEC3600D24FE5 /* shuttleNamesAndStops.csv in Resources */,
 				DDC0F54C1986DF9D0090ED7D /* GoogleMaps.bundle in Resources */,
 				DDDB050619817DA00074DC96 /* Main.storyboard in Resources */,
+				DD1FD5A51989954E00ED6AEF /* downtownRoute.csv in Resources */,
+				DD1FD5A41989954E00ED6AEF /* blackRoute.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +452,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF0C65E198810CD003DE935 /* RTWmainTableViewController.m in Sources */,
+				DDF0C6611988200C003DE935 /* RTWrouteTableViewCell.m in Sources */,
+				DD0EB70A198FE5DD00A238AB /* RTWrouteInformation.m in Sources */,
+				DDF0C664198821D4003DE935 /* RTWscheduleTableViewController.m in Sources */,
 				DDDB052D19817E170074DC96 /* RTWmapViewController.m in Sources */,
+				DDF0C6A4198841B3003DE935 /* RTWtimeTableViewCell.m in Sources */,
 				DDDB050319817DA00074DC96 /* RTWAppDelegate.m in Sources */,
 				DDDB04FF19817DA00074DC96 /* main.m in Sources */,
 			);

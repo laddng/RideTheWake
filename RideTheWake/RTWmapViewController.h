@@ -10,6 +10,12 @@
 
 @interface RTWmapViewController : UIViewController<GMSMapViewDelegate>
 
-@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+@property (strong, nonatomic) IBOutlet GMSMapView *mapView;
+
+@property NSString *routeID;
+
+@property NSString *routeIDName;
+
+@property int zoomLevel;
 
 @end
