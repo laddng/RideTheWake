@@ -27,8 +27,6 @@
 		DD1FD5A91989954E00ED6AEF /* hanesRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD59B1989954E00ED6AEF /* hanesRoute.csv */; };
 		DD74A1E719928B6B0013DF4B /* shuttleIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DD74A1E519928B6B0013DF4B /* shuttleIcon.png */; };
 		DD74A1E819928B6B0013DF4B /* shuttleIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD74A1E619928B6B0013DF4B /* shuttleIcon@2x.png */; };
-		DD74A1EB19928DF00013DF4B /* RTWAppIcon-120HR.png in Resources */ = {isa = PBXBuildFile; fileRef = DD74A1E919928DF00013DF4B /* RTWAppIcon-120HR.png */; };
-		DD74A1EC19928DF00013DF4B /* RTWAppIcon-Standard.png in Resources */ = {isa = PBXBuildFile; fileRef = DD74A1EA19928DF00013DF4B /* RTWAppIcon-Standard.png */; };
 		DD74A1F61992965C0013DF4B /* RTWLaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD74A1F51992965C0013DF4B /* RTWLaunchImage@2x.png */; };
 		DDBC46F5198EEC3600D24FE5 /* shuttleNamesAndStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DDBC46F4198EEC3600D24FE5 /* shuttleNamesAndStops.csv */; };
 		DDC0F5321986DDAD0090ED7D /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC0F5311986DDAD0090ED7D /* GoogleMaps.framework */; };
@@ -60,6 +58,11 @@
 		DDDB051E19817DA00074DC96 /* RideTheWakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDB051D19817DA00074DC96 /* RideTheWakeTests.m */; };
 		DDDB052A19817DB20074DC96 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDB052919817DB20074DC96 /* CoreLocation.framework */; };
 		DDDB052D19817E170074DC96 /* RTWmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDB052C19817E170074DC96 /* RTWmapViewController.m */; };
+		DDE48D091993C26600581DF9 /* RTWLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE48D081993C26500581DF9 /* RTWLaunchImage.png */; };
+		DDE48D161993CBD200581DF9 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE48D151993CBD200581DF9 /* libGoogleAnalyticsServices.a */; };
+		DDE48D201993CFBC00581DF9 /* RTWAppIcon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE48D1D1993CFBC00581DF9 /* RTWAppIcon-58.png */; };
+		DDE48D211993CFBC00581DF9 /* RTWAppIcon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE48D1E1993CFBC00581DF9 /* RTWAppIcon-80.png */; };
+		DDE48D221993CFBC00581DF9 /* RTWAppIcon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE48D1F1993CFBC00581DF9 /* RTWAppIcon-120.png */; };
 		DDF0C65E198810CD003DE935 /* RTWmainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0C65D198810CD003DE935 /* RTWmainTableViewController.m */; };
 		DDF0C6611988200C003DE935 /* RTWrouteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0C6601988200C003DE935 /* RTWrouteTableViewCell.m */; };
 		DDF0C664198821D4003DE935 /* RTWscheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0C663198821D4003DE935 /* RTWscheduleTableViewController.m */; };
@@ -98,8 +101,6 @@
 		DD1FD59B1989954E00ED6AEF /* hanesRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hanesRoute.csv; sourceTree = "<group>"; };
 		DD74A1E519928B6B0013DF4B /* shuttleIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuttleIcon.png; path = ../../shuttleIcon.png; sourceTree = "<group>"; };
 		DD74A1E619928B6B0013DF4B /* shuttleIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shuttleIcon@2x.png"; path = "../../shuttleIcon@2x.png"; sourceTree = "<group>"; };
-		DD74A1E919928DF00013DF4B /* RTWAppIcon-120HR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-120HR.png"; sourceTree = "<group>"; };
-		DD74A1EA19928DF00013DF4B /* RTWAppIcon-Standard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-Standard.png"; sourceTree = "<group>"; };
 		DD74A1F51992965C0013DF4B /* RTWLaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWLaunchImage@2x.png"; sourceTree = "<group>"; };
 		DDBC46F4198EEC3600D24FE5 /* shuttleNamesAndStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = shuttleNamesAndStops.csv; path = ../shuttleNamesAndStops.csv; sourceTree = "<group>"; };
 		DDC0F5311986DDAD0090ED7D /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
@@ -137,6 +138,21 @@
 		DDDB052919817DB20074DC96 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DDDB052B19817E170074DC96 /* RTWmapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWmapViewController.h; sourceTree = "<group>"; };
 		DDDB052C19817E170074DC96 /* RTWmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWmapViewController.m; sourceTree = "<group>"; };
+		DDE48D081993C26500581DF9 /* RTWLaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTWLaunchImage.png; sourceTree = "<group>"; };
+		DDE48D0B1993CB8A00581DF9 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		DDE48D0C1993CB8A00581DF9 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		DDE48D0D1993CB8A00581DF9 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		DDE48D0E1993CB8A00581DF9 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		DDE48D0F1993CB8A00581DF9 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		DDE48D101993CB8A00581DF9 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		DDE48D111993CB8A00581DF9 /* GAIFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		DDE48D121993CB8A00581DF9 /* GAILogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		DDE48D131993CB8A00581DF9 /* GAITrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		DDE48D141993CB8A00581DF9 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		DDE48D151993CBD200581DF9 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		DDE48D1D1993CFBC00581DF9 /* RTWAppIcon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-58.png"; sourceTree = "<group>"; };
+		DDE48D1E1993CFBC00581DF9 /* RTWAppIcon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-80.png"; sourceTree = "<group>"; };
+		DDE48D1F1993CFBC00581DF9 /* RTWAppIcon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-120.png"; sourceTree = "<group>"; };
 		DDF0C65C198810CD003DE935 /* RTWmainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWmainTableViewController.h; sourceTree = "<group>"; };
 		DDF0C65D198810CD003DE935 /* RTWmainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWmainTableViewController.m; sourceTree = "<group>"; };
 		DDF0C65F1988200C003DE935 /* RTWrouteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWrouteTableViewCell.h; sourceTree = "<group>"; };
@@ -163,6 +179,7 @@
 				DDC0F53A1986DE1D0090ED7D /* CoreText.framework in Frameworks */,
 				DDC0F5381986DE130090ED7D /* CoreData.framework in Frameworks */,
 				DDC0F5361986DE090090ED7D /* AVFoundation.framework in Frameworks */,
+				DDE48D161993CBD200581DF9 /* libGoogleAnalyticsServices.a in Frameworks */,
 				DDDB052A19817DB20074DC96 /* CoreLocation.framework in Frameworks */,
 				DDDB04F519817DA00074DC96 /* CoreGraphics.framework in Frameworks */,
 				DDC0F5321986DDAD0090ED7D /* GoogleMaps.framework in Frameworks */,
@@ -185,16 +202,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DD0EB70D19901BE400A238AB /* schedule */ = {
+		DD0EB70D19901BE400A238AB /* schedules */ = {
 			isa = PBXGroup;
 			children = (
 				DD0EB70B19901BDB00A238AB /* blackLineSchedule */,
 				DD0EB71219901F3000A238AB /* freshmenLineSchedule */,
 			);
-			name = schedule;
+			name = schedules;
 			sourceTree = "<group>";
 		};
-		DD1FD57F1989953A00ED6AEF /* Stops */ = {
+		DD1FD57F1989953A00ED6AEF /* stops */ = {
 			isa = PBXGroup;
 			children = (
 				DDBC46F4198EEC3600D24FE5 /* shuttleNamesAndStops.csv */,
@@ -206,15 +223,18 @@
 				DD0EB71019901E0000A238AB /* grayNightStops.csv */,
 				DD1FD5851989953A00ED6AEF /* hanesStops.csv */,
 			);
+			name = stops;
 			path = Stops;
 			sourceTree = "<group>";
 		};
 		DD1FD58C1989954E00ED6AEF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				DDE48D1D1993CFBC00581DF9 /* RTWAppIcon-58.png */,
+				DDE48D1E1993CFBC00581DF9 /* RTWAppIcon-80.png */,
+				DDE48D1F1993CFBC00581DF9 /* RTWAppIcon-120.png */,
 				DD74A1F51992965C0013DF4B /* RTWLaunchImage@2x.png */,
-				DD74A1E919928DF00013DF4B /* RTWAppIcon-120HR.png */,
-				DD74A1EA19928DF00013DF4B /* RTWAppIcon-Standard.png */,
+				DDE48D081993C26500581DF9 /* RTWLaunchImage.png */,
 				DD74A1E519928B6B0013DF4B /* shuttleIcon.png */,
 				DD74A1E619928B6B0013DF4B /* shuttleIcon@2x.png */,
 				DD1FD5941989954E00ED6AEF /* wfu_logo.gif */,
@@ -222,7 +242,7 @@
 			path = img;
 			sourceTree = "<group>";
 		};
-		DD1FD5951989954E00ED6AEF /* Routes */ = {
+		DD1FD5951989954E00ED6AEF /* routes */ = {
 			isa = PBXGroup;
 			children = (
 				DD1FD5961989954E00ED6AEF /* blackRoute.csv */,
@@ -233,10 +253,11 @@
 				DD0EB70E19901DE400A238AB /* grayNightRoute */,
 				DD1FD59B1989954E00ED6AEF /* hanesRoute.csv */,
 			);
+			name = routes;
 			path = Routes;
 			sourceTree = "<group>";
 		};
-		DD74A1E4199287E40013DF4B /* DetailClasses */ = {
+		DD74A1E4199287E40013DF4B /* sub classes */ = {
 			isa = PBXGroup;
 			children = (
 				DDF0C6A2198841B3003DE935 /* RTWtimeTableViewCell.h */,
@@ -246,7 +267,7 @@
 				DD0EB708198FE5DD00A238AB /* RTWrouteInformation.h */,
 				DD0EB709198FE5DD00A238AB /* RTWrouteInformation.m */,
 			);
-			name = DetailClasses;
+			name = "sub classes";
 			sourceTree = "<group>";
 		};
 		DDDB04E619817DA00074DC96 = {
@@ -272,6 +293,7 @@
 		DDDB04F119817DA00074DC96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDE48D151993CBD200581DF9 /* libGoogleAnalyticsServices.a */,
 				DDC0F5491986DE860090ED7D /* SystemConfiguration.framework */,
 				DDC0F5471986DE7D0090ED7D /* QuartzCore.framework */,
 				DDC0F5451986DE740090ED7D /* OpenGLES.framework */,
@@ -308,11 +330,12 @@
 				DDDB052B19817E170074DC96 /* RTWmapViewController.h */,
 				DDDB052C19817E170074DC96 /* RTWmapViewController.m */,
 				DDDB050A19817DA00074DC96 /* Images.xcassets */,
-				DD74A1E4199287E40013DF4B /* DetailClasses */,
-				DD0EB70D19901BE400A238AB /* schedule */,
+				DD74A1E4199287E40013DF4B /* sub classes */,
 				DD1FD58C1989954E00ED6AEF /* img */,
-				DD1FD5951989954E00ED6AEF /* Routes */,
-				DD1FD57F1989953A00ED6AEF /* Stops */,
+				DD1FD5951989954E00ED6AEF /* routes */,
+				DD0EB70D19901BE400A238AB /* schedules */,
+				DD1FD57F1989953A00ED6AEF /* stops */,
+				DDE48D0A1993CAAA00581DF9 /* GA */,
 				DDDB04F919817DA00074DC96 /* Supporting Files */,
 			);
 			path = RideTheWake;
@@ -345,6 +368,23 @@
 				DDDB051A19817DA00074DC96 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDE48D0A1993CAAA00581DF9 /* GA */ = {
+			isa = PBXGroup;
+			children = (
+				DDE48D0B1993CB8A00581DF9 /* GAI.h */,
+				DDE48D0C1993CB8A00581DF9 /* GAIDictionaryBuilder.h */,
+				DDE48D0D1993CB8A00581DF9 /* GAIEcommerceFields.h */,
+				DDE48D0E1993CB8A00581DF9 /* GAIEcommerceProduct.h */,
+				DDE48D0F1993CB8A00581DF9 /* GAIEcommerceProductAction.h */,
+				DDE48D101993CB8A00581DF9 /* GAIEcommercePromotion.h */,
+				DDE48D111993CB8A00581DF9 /* GAIFields.h */,
+				DDE48D121993CB8A00581DF9 /* GAILogger.h */,
+				DDE48D131993CB8A00581DF9 /* GAITrackedViewController.h */,
+				DDE48D141993CB8A00581DF9 /* GAITracker.h */,
+			);
+			name = GA;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,10 +467,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDE48D221993CFBC00581DF9 /* RTWAppIcon-120.png in Resources */,
 				DD1FD5871989953A00ED6AEF /* downtownStops.csv in Resources */,
 				DD1FD5891989953A00ED6AEF /* goldStops.csv in Resources */,
 				DD1FD5881989953A00ED6AEF /* freshmenStops.csv in Resources */,
 				DD1FD5A61989954E00ED6AEF /* freshmenRoute.csv in Resources */,
+				DDE48D091993C26600581DF9 /* RTWLaunchImage.png in Resources */,
 				DD0EB70C19901BDB00A238AB /* blackLineSchedule in Resources */,
 				DDDB050B19817DA00074DC96 /* Images.xcassets in Resources */,
 				DD1FD58B1989953A00ED6AEF /* hanesStops.csv in Resources */,
@@ -438,15 +480,15 @@
 				DD1FD5A31989954E00ED6AEF /* wfu_logo.gif in Resources */,
 				DD74A1E819928B6B0013DF4B /* shuttleIcon@2x.png in Resources */,
 				DD1FD58A1989953A00ED6AEF /* grayDayStops.csv in Resources */,
-				DD74A1EC19928DF00013DF4B /* RTWAppIcon-Standard.png in Resources */,
 				DD1FD5861989953A00ED6AEF /* blackStops.csv in Resources */,
 				DD74A1E719928B6B0013DF4B /* shuttleIcon.png in Resources */,
+				DDE48D201993CFBC00581DF9 /* RTWAppIcon-58.png in Resources */,
 				DD1FD5A71989954E00ED6AEF /* goldRoute.csv in Resources */,
 				DD1FD5A91989954E00ED6AEF /* hanesRoute.csv in Resources */,
 				DD0EB71119901E0000A238AB /* grayNightStops.csv in Resources */,
 				DDDB04FD19817DA00074DC96 /* InfoPlist.strings in Resources */,
 				DD74A1F61992965C0013DF4B /* RTWLaunchImage@2x.png in Resources */,
-				DD74A1EB19928DF00013DF4B /* RTWAppIcon-120HR.png in Resources */,
+				DDE48D211993CFBC00581DF9 /* RTWAppIcon-80.png in Resources */,
 				DD0EB71319901F3000A238AB /* freshmenLineSchedule in Resources */,
 				DD0EB70F19901DE400A238AB /* grayNightRoute in Resources */,
 				DDBC46F5198EEC3600D24FE5 /* shuttleNamesAndStops.csv in Resources */,
@@ -617,6 +659,10 @@
 				GCC_PREFIX_HEADER = "RideTheWake/RideTheWake-Prefix.pch";
 				INFOPLIST_FILE = "RideTheWake/RideTheWake-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -638,6 +684,10 @@
 				GCC_PREFIX_HEADER = "RideTheWake/RideTheWake-Prefix.pch";
 				INFOPLIST_FILE = "RideTheWake/RideTheWake-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

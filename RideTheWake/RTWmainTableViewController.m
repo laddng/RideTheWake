@@ -23,6 +23,20 @@
 
 @implementation RTWmainTableViewController
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    
+    [super viewDidAppear:animated];
+    
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName
+           value:@"Main Screen"];
+    
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
+}
+
 - (void)viewDidLoad
 {
     
@@ -32,19 +46,9 @@
     
     _nightRoutes = [[NSMutableArray alloc] init];
     
-    [self setSelectedViewByTime];
     _selectedView = 0;
     
     [self loadShuttleRouteNamesAndStops];
-    
-}
-
-- (void) setSelectedViewByTime
-{
-    
-    NSDate *now = [[NSDate alloc] init];
-    
-    
     
 }
 

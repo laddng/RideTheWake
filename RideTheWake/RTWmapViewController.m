@@ -15,6 +15,20 @@
 
 @implementation RTWmapViewController
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    
+    [super viewDidAppear:animated];
+    
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName
+           value:@"Map Screen"];
+    
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
+}
+
 - (void)viewDidLoad
 {
     
