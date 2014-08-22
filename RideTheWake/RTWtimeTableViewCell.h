@@ -10,4 +10,6 @@
 
 @interface RTWtimeTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *time;
+
 @end

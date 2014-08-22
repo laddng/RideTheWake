@@ -22,7 +22,7 @@
                                 <barButtonItem systemItem="flexibleSpace" id="0M3-ZC-4Q3"/>
                                 <barButtonItem style="plain" id="0ZS-Bi-PAH">
                                     <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="LcG-Ez-O9T">
-                                        <rect key="frame" x="26" y="5" width="267" height="34"/>
+                                        <rect key="frame" x="11" y="4" width="301" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="☼ Day Shuttles"/>
@@ -126,7 +126,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhB-yx-RfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="631"/>
+            <point key="canvasLocation" x="720" y="630.5"/>
         </scene>
         <!--View Controller - About This App-->
         <scene sceneID="3U8-wk-GSE">
@@ -146,7 +146,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLl-Hc-xau">
                                 <rect key="frame" x="20" y="20" width="280" height="197"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <string key="text">This app was developed by the Wake Forest Computer Science Department. The first version of this app was created by Professor Daniel Cañas and Masters graduate Michael Crouse. The seond version (this one) was reprogrammed and redesigned by undergraduate student Nick Ladd '16.</string>
+                                <string key="text">This app was developed by the Wake Forest Computer Science Department. The first version of this app was created by Professor Daniel Cañas and Masters graduate Michael Crouse. The second version (this one) was reprogrammed and redesigned by undergraduate student Nick Ladd '16.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -224,12 +224,12 @@
         <scene sceneID="yGv-SB-9wf">
             <objects>
                 <tableViewController id="wwH-TB-zyT" customClass="RTWscheduleTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="35" sectionHeaderHeight="22" sectionFooterHeight="22" id="qGE-9j-Tco">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" id="qGE-9j-Tco">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92156869173049927" green="0.92156869173049927" blue="0.92156869173049927" alpha="1" colorSpace="deviceRGB"/>
                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="OkE-eD-pGv">
+                        <view key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="OkE-eD-pGv">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="141"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -245,7 +245,7 @@ See the Gray Line for departure times between 7:15 AM - 7:30 PM.</string>
                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                                 </textView>
                             </subviews>
-                            <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="0.0" colorSpace="calibratedRGB"/>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="10j-i8-eow">
                             <rect key="frame" x="0.0" y="198" width="320" height="50"/>
@@ -253,22 +253,14 @@ See the Gray Line for departure times between 7:15 AM - 7:30 PM.</string>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="time" rowHeight="35" id="Ktr-Of-CNz" customClass="RTWtimeTableViewCell">
+                            <tableViewCell opaque="NO" contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="time" rowHeight="45" id="Ktr-Of-CNz" customClass="RTWtimeTableViewCell">
                                 <rect key="frame" x="0.0" y="163" width="320" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ktr-Of-CNz" id="AuI-W9-9pA">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="xx:15   xx:30   xx:45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbN-VH-jbD">
-                                            <rect key="frame" x="20" y="6" width="280" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.15619926948051943" green="0.15619926948051943" blue="0.15619926948051943" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                             </tableViewCell>
                         </prototypes>
@@ -292,7 +284,7 @@ See the Gray Line for departure times between 7:15 AM - 7:30 PM.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61n-oM-6ZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Hgh-WV-ZQ8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1981" y="635"/>
+            <point key="canvasLocation" x="1981" y="634"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ENe-BR-Pqy">

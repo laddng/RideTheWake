@@ -43,6 +43,8 @@
     [self loadShuttleStopMarkers];
     
     [self loadRoutePath];
+    
+    //[self loadShuttlesCurrentLocation];
 
 }
 
@@ -69,22 +71,41 @@
 
 /*
 // Pin the shuttle's current location
-- (CLLocationCoordinate2D) loadShuttlesCurrentLocation
+- (void) loadShuttlesCurrentLocation
 {
-    
+ 
     // Get location from file off server
-    NSURL *serverURLPath = [NSURL URLWithString:@"http://www.shuttle.cs.wfu/iPhone/blackLine"];
+    NSURL *serverURLPath = [NSURL URLWithString:@"http://shuttle.cs.wfu.edu/iPhone/blackLine"];
     
     NSString *fileContents = [NSString stringWithContentsOfURL:serverURLPath encoding:NSUTF8StringEncoding error:NULL];
     
     NSArray *fileCoordinates = [fileContents componentsSeparatedByString:@","];
+ 
+    // If shuttle is NOT offline
+    if(([[fileCoordinates objectAtIndex:0] floatValue] != 0.0) && ([[fileCoordinates objectAtIndex:1] floatValue] != 0.0))
+    {
+ 
+        CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake([[fileCoordinates objectAtIndex:0] floatValue], [[fileCoordinates objectAtIndex:1] floatValue]);
+     
+        GMSMarker *marker = [[GMSMarker alloc] init];
+        
+        marker.position = shuttleCoordinates;
+        marker.map = self.mapView;
+        marker.icon = [GMSMarker markerImageWithColor:[UIColor redColor]];
+ 
+    }
+ 
+    else {
     
-    // Convert file coordinates to CLLocationCoordinate2D
-    CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake([[fileCoordinates objectAtIndex:0] floatValue], [[fileCoordinates objectAtIndex:1] floatValue]);
-    
+        UIAlertView *shuttleIsOffline = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:@"This route is currently not operating." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+ 
+        [shuttleIsOffline show];
+        
+    }
+ 
 }
 */
-    
+
 // Load shuttle stop markers based on the route id
 - (void) loadShuttleStopMarkers
 {

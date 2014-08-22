@@ -11,8 +11,8 @@
 
 @interface RTWscheduleTableViewController ()
 
-@property NSArray *stopNames;
-@property NSArray *stopTimes;
+@property NSMutableArray *stopNames;
+@property NSMutableArray *stopTimes;
 
 @end
 
@@ -37,8 +37,6 @@
     
     [super viewDidLoad];
     
-    _stopNames = @[@"Last Resort Bar", @"Tate's Bar", @"Finnegann's Bar", @"Benson"];
-    
     self.navigationItem.title = [NSString stringWithFormat:@"%@ Schedule", _routeID];
         
     [self loadRouteSchedule];
@@ -48,11 +46,32 @@
 - (void) loadRouteSchedule
 {
     
+    _stopNames = [[NSMutableArray alloc] init];
+    
+    _stopTimes = [[NSMutableArray alloc] init];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@LineSchedule", _routeIDName] ofType:@"csv"];
+    
+    NSString *fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+    
+    NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
+    
+    for (int i = 0; i < [fileLines count]; i++)
+    {
+     
+        NSArray *lineItem = [fileLines[i] componentsSeparatedByString:@"|"];
+        
+        [_stopNames addObject:[lineItem objectAtIndex:0]];
+        
+        [_stopTimes addObject:[lineItem objectAtIndex:1]];
+        
+    }
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return [_stopNames count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -61,17 +80,22 @@
     return 1;
 }
 
-// Configure each cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     RTWtimeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"time" forIndexPath:indexPath];
     
+    cell.time.text = [_stopTimes objectAtIndex:indexPath.section];
+    
     return cell;
+    
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
+    
     return [_stopNames objectAtIndex:section];
+    
 }
 
 @end
