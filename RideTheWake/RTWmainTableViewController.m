@@ -87,6 +87,10 @@
         
         routeObject.zoomLevel = [[lineItem objectAtIndex:4] intValue];
         
+        routeObject.centerPointLatitude = [[lineItem objectAtIndex:5] floatValue];
+        
+        routeObject.centerPointLongitude = [[lineItem objectAtIndex:6] floatValue];
+        
         if ([[lineItem objectAtIndex:1] isEqualToString:@"day"])
         {
             
@@ -181,6 +185,9 @@
             mapVC.routeID = [info routeName];
             mapVC.routeIDName = [info routeID];
             mapVC.zoomLevel = [info zoomLevel];
+            mapVC.centerPointLatitude = [info centerPointLatitude];
+            mapVC.centerPointLongitude = [info centerPointLongitude];
+            
         }
         
         else
@@ -191,6 +198,8 @@
             mapVC.routeID = [info routeName];
             mapVC.routeIDName = [info routeID];
             mapVC.zoomLevel = [info zoomLevel];
+            mapVC.centerPointLatitude = [info centerPointLatitude];
+            mapVC.centerPointLongitude = [info centerPointLongitude];
             
         }
 

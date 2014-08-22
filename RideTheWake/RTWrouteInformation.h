@@ -20,4 +20,8 @@
 
 @property int zoomLevel;
 
+@property float centerPointLatitude;
+
+@property float centerPointLongitude;
+
 @end

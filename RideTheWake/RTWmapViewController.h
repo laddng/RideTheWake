@@ -18,4 +18,8 @@
 
 @property int zoomLevel;
 
+@property CLLocationDegrees centerPointLongitude;
+
+@property CLLocationDegrees centerPointLatitude;
+
 @end

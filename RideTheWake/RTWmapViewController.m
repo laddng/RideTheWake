@@ -50,10 +50,10 @@
 - (void) loadMapView
 {
     
-    CLLocationCoordinate2D shuttleCoordinates = [self loadShuttlesCurrentLocation];
-    
     // Get location of shuttle
-    GMSCameraPosition *shuttle = [GMSCameraPosition cameraWithLatitude:shuttleCoordinates.latitude longitude:shuttleCoordinates.longitude zoom:_zoomLevel];
+    GMSCameraPosition *shuttle = [GMSCameraPosition cameraWithLatitude:_centerPointLatitude longitude:_centerPointLongitude zoom:_zoomLevel];
+    
+    NSLog(@"%f", _centerPointLongitude);
     
     // Init mapView with settings
     self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:shuttle];
@@ -67,12 +67,13 @@
 
 }
 
+/*
 // Pin the shuttle's current location
 - (CLLocationCoordinate2D) loadShuttlesCurrentLocation
 {
     
     // Get location from file off server
-    /*NSURL *serverURLPath = [NSURL URLWithString:@"http://www.shuttle.cs.wfu/iPhone/blackLine"];
+    NSURL *serverURLPath = [NSURL URLWithString:@"http://www.shuttle.cs.wfu/iPhone/blackLine"];
     
     NSString *fileContents = [NSString stringWithContentsOfURL:serverURLPath encoding:NSUTF8StringEncoding error:NULL];
     
@@ -80,14 +81,10 @@
     
     // Convert file coordinates to CLLocationCoordinate2D
     CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake([[fileCoordinates objectAtIndex:0] floatValue], [[fileCoordinates objectAtIndex:1] floatValue]);
-    */
-    // TEMPORARY COORDINATES
-    CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake(36.129181, -80.258384);
-    
-    return shuttleCoordinates;
     
 }
-
+*/
+    
 // Load shuttle stop markers based on the route id
 - (void) loadShuttleStopMarkers
 {
