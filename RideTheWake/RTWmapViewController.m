@@ -48,87 +48,71 @@
 
 }
 
-// Init Method for MapView
 - (void) loadMapView
 {
     
-    // Get location of shuttle
     GMSCameraPosition *shuttle = [GMSCameraPosition cameraWithLatitude:_centerPointLatitude longitude:_centerPointLongitude zoom:_zoomLevel];
-    
-    NSLog(@"%f", _centerPointLongitude);
-    
-    // Init mapView with settings
+        
     self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:shuttle];
     self.mapView.myLocationEnabled = YES;
     self.mapView.settings.compassButton = YES;
     self.mapView.settings.myLocationButton = YES;
     self.mapView.delegate = self;
 
-    // Display mapView
     self.view = self.mapView;
 
 }
 
-/*
-// Pin the shuttle's current location
 - (void) loadShuttlesCurrentLocation
 {
  
     // Get location from file off server
-    NSURL *serverURLPath = [NSURL URLWithString:@"http://shuttle.cs.wfu.edu/iPhone/blackLine"];
+    NSURL *serverURLPath = [NSURL URLWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/iPhone/%@", _routeIDName]];
     
     NSString *fileContents = [NSString stringWithContentsOfURL:serverURLPath encoding:NSUTF8StringEncoding error:NULL];
     
     NSArray *fileCoordinates = [fileContents componentsSeparatedByString:@","];
  
-    // If shuttle is NOT offline
     if(([[fileCoordinates objectAtIndex:0] floatValue] != 0.0) && ([[fileCoordinates objectAtIndex:1] floatValue] != 0.0))
     {
  
         CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake([[fileCoordinates objectAtIndex:0] floatValue], [[fileCoordinates objectAtIndex:1] floatValue]);
      
         GMSMarker *marker = [[GMSMarker alloc] init];
-        
         marker.position = shuttleCoordinates;
         marker.map = self.mapView;
-        marker.icon = [GMSMarker markerImageWithColor:[UIColor redColor]];
+        marker.icon = [UIImage imageNamed:@"shuttleMarker"];
+        marker.zIndex = 1000;
  
     }
  
     else {
     
-        UIAlertView *shuttleIsOffline = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:@"This route is currently not operating." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        UIAlertView *shuttleIsOffline = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:@"This shuttle is currently not operating." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
  
         [shuttleIsOffline show];
         
     }
  
 }
-*/
 
-// Load shuttle stop markers based on the route id
 - (void) loadShuttleStopMarkers
 {
     
-    // Load file that contains coordinates of shuttle stops
     NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Stops", _routeIDName] ofType:@"csv"];
     
     NSString *fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     
     NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
     
-    // Loop through csv file and get coordinates
     for (int i = 0; i < [fileLines count]; i++)
     {
-        // New marker
+
         GMSMarker *marker = [[GMSMarker alloc] init];
         
         NSArray *lineItem = [fileLines[i] componentsSeparatedByString:@","];
         
-        // Stop coordinate
         marker.position = CLLocationCoordinate2DMake([[lineItem objectAtIndex:0] floatValue], [[lineItem objectAtIndex:1] floatValue]);
-        
-        // Stop name
         marker.snippet = [lineItem objectAtIndex:2];
         marker.map = self.mapView;
         marker.icon = [GMSMarker markerImageWithColor:[UIColor blueColor]];
@@ -137,21 +121,17 @@
 
 }
 
-// Load route path based on the route id
 - (void) loadRoutePath
 {
     
-    // Get route from csv file
     NSString* path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Route", _routeIDName] ofType:@"csv"];
     
     NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     
     NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
     
-    // Array of coordinates for route
     GMSMutablePath *polylineCoordinates = [GMSMutablePath path];
 
-    // Loop through csv file and get coordinates
     for (int i = 0; i < [fileLines count]; i++)
     {
         NSArray *lineItem = [fileLines[i] componentsSeparatedByString:@","];
@@ -160,7 +140,6 @@
         
     }
     
-    // Create the polyline with coordinates and settings
     GMSPolyline *polyline = [GMSPolyline polylineWithPath:polylineCoordinates];
     polyline.map = _mapView;
     polyline.strokeWidth = 8.f;
@@ -168,11 +147,9 @@
 
 }
 
-// Segue to scheduleView by passing a route ID name
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    // If making a segue to a mapView
     if ([[segue identifier] isEqualToString:@"scheduleVC"])
     {
         

@@ -56,7 +56,9 @@
     
     NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
     
-    for (int i = 0; i < [fileLines count]; i++)
+    NSArray *info = [fileLines[0] componentsSeparatedByString:@"|"];
+    
+    for (int i = 1; i < [fileLines count]; i++)
     {
      
         NSArray *lineItem = [fileLines[i] componentsSeparatedByString:@"|"];

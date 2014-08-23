@@ -233,12 +233,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="141"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="alo-8Z-0RW">
+                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Schedule Information" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="alo-8Z-0RW">
                                     <rect key="frame" x="20" y="20" width="280" height="101"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <string key="text">Roundtrip service from 7:30 PM - 7:25 AM
-On-call service after 12:00 AM, please call 336.283.1091 for pickup.
-See the Gray Line for departure times between 7:15 AM - 7:30 PM.</string>
                                     <color key="textColor" red="0.32359307359307354" green="0.32359307359307354" blue="0.32359307359307354" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
