@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		DD04098819A5DE390003476F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD04098719A5DE390003476F /* libsqlite3.0.dylib */; };
 		DD0EB70A198FE5DD00A238AB /* RTWrouteInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0EB709198FE5DD00A238AB /* RTWrouteInformation.m */; };
-		DD0EB70C19901BDB00A238AB /* blackLineSchedule.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD0EB70B19901BDB00A238AB /* blackLineSchedule.csv */; };
 		DD0EB70F19901DE400A238AB /* grayNightRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD0EB70E19901DE400A238AB /* grayNightRoute.csv */; };
 		DD0EB71119901E0000A238AB /* grayNightStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD0EB71019901E0000A238AB /* grayNightStops.csv */; };
-		DD0EB71319901F3000A238AB /* freshmenLineSchedule.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD0EB71219901F3000A238AB /* freshmenLineSchedule.csv */; };
 		DD1FD5861989953A00ED6AEF /* blackStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5801989953A00ED6AEF /* blackStops.csv */; };
 		DD1FD5871989953A00ED6AEF /* downtownStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5811989953A00ED6AEF /* downtownStops.csv */; };
 		DD1FD5881989953A00ED6AEF /* freshmenStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD1FD5821989953A00ED6AEF /* freshmenStops.csv */; };
@@ -30,7 +28,6 @@
 		DD26684A19A8950A00E0A71B /* shuttleIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DD26684819A8950A00E0A71B /* shuttleIcon.png */; };
 		DD26684B19A8950A00E0A71B /* shuttleIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD26684919A8950A00E0A71B /* shuttleIcon@2x.png */; };
 		DD74A1F61992965C0013DF4B /* RTWLaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD74A1F51992965C0013DF4B /* RTWLaunchImage@2x.png */; };
-		DDB6B3C819A79031008D716B /* goldLineSchedule.csv in Resources */ = {isa = PBXBuildFile; fileRef = DDB6B3C719A79031008D716B /* goldLineSchedule.csv */; };
 		DDBC46F5198EEC3600D24FE5 /* shuttleNamesAndStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DDBC46F4198EEC3600D24FE5 /* shuttleNamesAndStops.csv */; };
 		DDDB04F319817DA00074DC96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDB04F219817DA00074DC96 /* Foundation.framework */; };
 		DDDB04F519817DA00074DC96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDB04F419817DA00074DC96 /* CoreGraphics.framework */; };
@@ -85,10 +82,8 @@
 		DD04098719A5DE390003476F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		DD0EB708198FE5DD00A238AB /* RTWrouteInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWrouteInformation.h; sourceTree = "<group>"; };
 		DD0EB709198FE5DD00A238AB /* RTWrouteInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWrouteInformation.m; sourceTree = "<group>"; };
-		DD0EB70B19901BDB00A238AB /* blackLineSchedule.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = blackLineSchedule.csv; path = Schedules/blackLineSchedule.csv; sourceTree = "<group>"; };
 		DD0EB70E19901DE400A238AB /* grayNightRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grayNightRoute.csv; sourceTree = "<group>"; };
 		DD0EB71019901E0000A238AB /* grayNightStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grayNightStops.csv; sourceTree = "<group>"; };
-		DD0EB71219901F3000A238AB /* freshmenLineSchedule.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = freshmenLineSchedule.csv; path = Schedules/freshmenLineSchedule.csv; sourceTree = "<group>"; };
 		DD1FD5801989953A00ED6AEF /* blackStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blackStops.csv; sourceTree = "<group>"; };
 		DD1FD5811989953A00ED6AEF /* downtownStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = downtownStops.csv; sourceTree = "<group>"; };
 		DD1FD5821989953A00ED6AEF /* freshmenStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = freshmenStops.csv; sourceTree = "<group>"; };
@@ -106,7 +101,6 @@
 		DD26684819A8950A00E0A71B /* shuttleIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuttleIcon.png; sourceTree = "<group>"; };
 		DD26684919A8950A00E0A71B /* shuttleIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuttleIcon@2x.png"; sourceTree = "<group>"; };
 		DD74A1F51992965C0013DF4B /* RTWLaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWLaunchImage@2x.png"; sourceTree = "<group>"; };
-		DDB6B3C719A79031008D716B /* goldLineSchedule.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = goldLineSchedule.csv; path = Schedules/goldLineSchedule.csv; sourceTree = "<group>"; };
 		DDBC46F4198EEC3600D24FE5 /* shuttleNamesAndStops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = shuttleNamesAndStops.csv; path = ../shuttleNamesAndStops.csv; sourceTree = "<group>"; };
 		DDC0F5351986DE090090ED7D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DDC0F5371986DE130090ED7D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -206,16 +200,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DD0EB70D19901BE400A238AB /* schedules */ = {
-			isa = PBXGroup;
-			children = (
-				DD0EB70B19901BDB00A238AB /* blackLineSchedule.csv */,
-				DD0EB71219901F3000A238AB /* freshmenLineSchedule.csv */,
-				DDB6B3C719A79031008D716B /* goldLineSchedule.csv */,
-			);
-			name = schedules;
-			sourceTree = "<group>";
-		};
 		DD1FD57F1989953A00ED6AEF /* stops */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,7 +323,6 @@
 				DD74A1E4199287E40013DF4B /* sub classes */,
 				DD1FD58C1989954E00ED6AEF /* img */,
 				DD1FD5951989954E00ED6AEF /* routes */,
-				DD0EB70D19901BE400A238AB /* schedules */,
 				DD1FD57F1989953A00ED6AEF /* stops */,
 				DDE48D0A1993CAAA00581DF9 /* GA */,
 				DDDB04F919817DA00074DC96 /* Supporting Files */,
@@ -512,7 +495,6 @@
 				DD1FD5881989953A00ED6AEF /* freshmenStops.csv in Resources */,
 				DD1FD5A61989954E00ED6AEF /* freshmenRoute.csv in Resources */,
 				DDE48D091993C26600581DF9 /* RTWLaunchImage.png in Resources */,
-				DD0EB70C19901BDB00A238AB /* blackLineSchedule.csv in Resources */,
 				DDDB050B19817DA00074DC96 /* Images.xcassets in Resources */,
 				DD1FD58B1989953A00ED6AEF /* hanesStops.csv in Resources */,
 				DD1FD5A81989954E00ED6AEF /* grayDayRoute.csv in Resources */,
@@ -523,12 +505,10 @@
 				DDE48D201993CFBC00581DF9 /* RTWAppIcon-58.png in Resources */,
 				DD1FD5A71989954E00ED6AEF /* goldRoute.csv in Resources */,
 				DD1FD5A91989954E00ED6AEF /* hanesRoute.csv in Resources */,
-				DDB6B3C819A79031008D716B /* goldLineSchedule.csv in Resources */,
 				DD0EB71119901E0000A238AB /* grayNightStops.csv in Resources */,
 				DDDB04FD19817DA00074DC96 /* InfoPlist.strings in Resources */,
 				DD74A1F61992965C0013DF4B /* RTWLaunchImage@2x.png in Resources */,
 				DDE48D211993CFBC00581DF9 /* RTWAppIcon-80.png in Resources */,
-				DD0EB71319901F3000A238AB /* freshmenLineSchedule.csv in Resources */,
 				DD0EB70F19901DE400A238AB /* grayNightRoute.csv in Resources */,
 				DDBC46F5198EEC3600D24FE5 /* shuttleNamesAndStops.csv in Resources */,
 				DD26684B19A8950A00E0A71B /* shuttleIcon@2x.png in Resources */,

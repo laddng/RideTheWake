@@ -14,6 +14,6 @@
 
 @property NSString *routeIDName;
 
-@property (weak, nonatomic) IBOutlet UITextView *scheduleInformation;
+@property (weak, nonatomic) IBOutlet UITextView *scheduleInfo;
 
 @end

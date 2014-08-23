@@ -140,9 +140,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wfu_logo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="aF1-ep-z8i">
-                                <rect key="frame" x="59" y="360" width="202" height="124"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLl-Hc-xau">
                                 <rect key="frame" x="20" y="20" width="280" height="197"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -150,6 +147,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wfu_logo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="aF1-ep-z8i">
+                                <rect key="frame" x="59" y="225" width="202" height="124"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
@@ -157,9 +157,9 @@
                             <constraint firstItem="TKs-JZ-3kJ" firstAttribute="top" secondItem="rLl-Hc-xau" secondAttribute="bottom" constant="287" id="1JZ-g6-Eh7"/>
                             <constraint firstItem="aF1-ep-z8i" firstAttribute="leading" secondItem="hCf-Xu-t0s" secondAttribute="leading" constant="59" id="B54-QU-1br"/>
                             <constraint firstItem="rLl-Hc-xau" firstAttribute="leading" secondItem="hCf-Xu-t0s" secondAttribute="leading" constant="20" id="H9t-cz-Fra"/>
-                            <constraint firstItem="TKs-JZ-3kJ" firstAttribute="top" secondItem="aF1-ep-z8i" secondAttribute="bottom" constant="20" id="WBQ-So-FuH"/>
+                            <constraint firstItem="TKs-JZ-3kJ" firstAttribute="top" secondItem="aF1-ep-z8i" secondAttribute="bottom" constant="155" id="WBQ-So-FuH"/>
                             <constraint firstAttribute="trailing" secondItem="rLl-Hc-xau" secondAttribute="trailing" constant="20" id="WQ9-lD-mwE"/>
-                            <constraint firstItem="aF1-ep-z8i" firstAttribute="top" secondItem="o4Q-lQ-W97" secondAttribute="bottom" constant="360" id="aNe-lb-u8n"/>
+                            <constraint firstItem="aF1-ep-z8i" firstAttribute="top" secondItem="o4Q-lQ-W97" secondAttribute="bottom" constant="225" id="aNe-lb-u8n"/>
                             <constraint firstAttribute="centerX" secondItem="rLl-Hc-xau" secondAttribute="centerX" id="eNF-Ls-cXZ"/>
                             <constraint firstAttribute="trailing" secondItem="aF1-ep-z8i" secondAttribute="trailing" constant="59" id="uYj-yp-VjR"/>
                         </constraints>
@@ -176,7 +176,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbu-Jb-0qj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Qgw-e5-I7n" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="1315"/>
+            <point key="canvasLocation" x="1149" y="1309"/>
         </scene>
         <!--Wmap View Controller - Route Name-->
         <scene sceneID="ufC-wZ-h7g">
@@ -229,25 +229,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92156869173049927" green="0.92156869173049927" blue="0.92156869173049927" alpha="1" colorSpace="deviceRGB"/>
                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="OkE-eD-pGv">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="141"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="yIF-Hq-IGp">
+                            <rect key="frame" x="0.0" y="67" width="320" height="240"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Schedule Information" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="alo-8Z-0RW">
-                                    <rect key="frame" x="20" y="20" width="280" height="101"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <color key="textColor" red="0.32359307359307354" green="0.32359307359307354" blue="0.32359307359307354" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Schedule Info" translatesAutoresizingMaskIntoConstraints="NO" id="VGq-KS-4pX">
+                                    <rect key="frame" x="20" y="20" width="280" height="200"/>
+                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                                 </textView>
                             </subviews>
-                            <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="0.0" colorSpace="calibratedRGB"/>
-                        </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="10j-i8-eow">
-                            <rect key="frame" x="0.0" y="198" width="320" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
                             <tableViewCell opaque="NO" contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="time" rowHeight="45" id="Ktr-Of-CNz" customClass="RTWtimeTableViewCell">
@@ -256,9 +250,20 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ktr-Of-CNz" id="AuI-W9-9pA">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW2-zY-EFK">
+                                            <rect key="frame" x="20" y="12" width="280" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="time" destination="ZW2-zY-EFK" id="QOs-CI-r2h"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -275,13 +280,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="scheduleInformation" destination="alo-8Z-0RW" id="Lhr-x4-JK6"/>
+                        <outlet property="scheduleInfo" destination="VGq-KS-4pX" id="viI-dd-8XR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61n-oM-6ZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Hgh-WV-ZQ8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1981" y="634"/>
+            <point key="canvasLocation" x="1981" y="633"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ENe-BR-Pqy">
@@ -350,7 +355,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HSw-QA-Uar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="1315"/>
+            <point key="canvasLocation" x="720" y="1309"/>
         </scene>
     </scenes>
     <resources>

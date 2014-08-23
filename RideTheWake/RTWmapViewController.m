@@ -105,7 +105,7 @@
     
     NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
     
-    for (int i = 0; i < [fileLines count]; i++)
+    for (int i = 0; i < [fileLines count]-1; i++)
     {
 
         GMSMarker *marker = [[GMSMarker alloc] init];

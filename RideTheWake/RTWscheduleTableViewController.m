@@ -50,24 +50,24 @@
     
     _stopTimes = [[NSMutableArray alloc] init];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@LineSchedule", _routeIDName] ofType:@"csv"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Stops", _routeIDName] ofType:@"csv"];
     
     NSString *fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     
     NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
     
-    NSArray *info = [fileLines[0] componentsSeparatedByString:@"|"];
-    
-    for (int i = 1; i < [fileLines count]; i++)
+    for (int i = 0; i < [fileLines count]-1; i++)
     {
      
-        NSArray *lineItem = [fileLines[i] componentsSeparatedByString:@"|"];
+        NSArray *lineItem = [fileLines[i] componentsSeparatedByString:@","];
         
-        [_stopNames addObject:[lineItem objectAtIndex:0]];
+        [_stopNames addObject:[lineItem objectAtIndex:2]];
         
-        [_stopTimes addObject:[lineItem objectAtIndex:1]];
+        [_stopTimes addObject:[lineItem objectAtIndex:3]];
         
     }
+    
+    _scheduleInfo.text = [fileLines objectAtIndex:[fileLines count]-1];
     
 }
 
