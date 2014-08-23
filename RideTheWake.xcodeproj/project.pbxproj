@@ -45,9 +45,6 @@
 		DDDB052D19817E170074DC96 /* RTWmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDB052C19817E170074DC96 /* RTWmapViewController.m */; };
 		DDE48D091993C26600581DF9 /* RTWLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE48D081993C26500581DF9 /* RTWLaunchImage.png */; };
 		DDE48D161993CBD200581DF9 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE48D151993CBD200581DF9 /* libGoogleAnalyticsServices.a */; };
-		DDE48D201993CFBC00581DF9 /* RTWAppIcon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE48D1D1993CFBC00581DF9 /* RTWAppIcon-58.png */; };
-		DDE48D211993CFBC00581DF9 /* RTWAppIcon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE48D1E1993CFBC00581DF9 /* RTWAppIcon-80.png */; };
-		DDE48D221993CFBC00581DF9 /* RTWAppIcon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE48D1F1993CFBC00581DF9 /* RTWAppIcon-120.png */; };
 		DDE48E411993D6BD00581DF9 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE48E401993D6BD00581DF9 /* GoogleMaps.framework */; };
 		DDE48E431993D6D900581DF9 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DDE48E421993D6D900581DF9 /* GoogleMaps.bundle */; };
 		DDE48E441993D75100581DF9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC0F5351986DE090090ED7D /* AVFoundation.framework */; };
@@ -66,6 +63,10 @@
 		DDF0C6611988200C003DE935 /* RTWrouteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0C6601988200C003DE935 /* RTWrouteTableViewCell.m */; };
 		DDF0C664198821D4003DE935 /* RTWscheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0C663198821D4003DE935 /* RTWscheduleTableViewController.m */; };
 		DDF0C6A4198841B3003DE935 /* RTWtimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0C6A3198841B3003DE935 /* RTWtimeTableViewCell.m */; };
+		DDFC4DA019A8C1DC0045CEAC /* RTWAppIcon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFC4D9C19A8C1DC0045CEAC /* RTWAppIcon-58.png */; };
+		DDFC4DA119A8C1DC0045CEAC /* RTWAppIcon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFC4D9D19A8C1DC0045CEAC /* RTWAppIcon-80.png */; };
+		DDFC4DA219A8C1DC0045CEAC /* RTWAppIcon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFC4D9E19A8C1DC0045CEAC /* RTWAppIcon-120.png */; };
+		DDFC4DA319A8C1DC0045CEAC /* RTWAppIcon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFC4D9F19A8C1DC0045CEAC /* RTWAppIcon-1024.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,9 +147,6 @@
 		DDE48D131993CB8A00581DF9 /* GAITrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
 		DDE48D141993CB8A00581DF9 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		DDE48D151993CBD200581DF9 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
-		DDE48D1D1993CFBC00581DF9 /* RTWAppIcon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-58.png"; sourceTree = "<group>"; };
-		DDE48D1E1993CFBC00581DF9 /* RTWAppIcon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-80.png"; sourceTree = "<group>"; };
-		DDE48D1F1993CFBC00581DF9 /* RTWAppIcon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-120.png"; sourceTree = "<group>"; };
 		DDE48E401993D6BD00581DF9 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		DDE48E421993D6D900581DF9 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		DDF0C65C198810CD003DE935 /* RTWmainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWmainTableViewController.h; sourceTree = "<group>"; };
@@ -159,6 +157,10 @@
 		DDF0C663198821D4003DE935 /* RTWscheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWscheduleTableViewController.m; sourceTree = "<group>"; };
 		DDF0C6A2198841B3003DE935 /* RTWtimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWtimeTableViewCell.h; sourceTree = "<group>"; };
 		DDF0C6A3198841B3003DE935 /* RTWtimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWtimeTableViewCell.m; sourceTree = "<group>"; };
+		DDFC4D9C19A8C1DC0045CEAC /* RTWAppIcon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-58.png"; sourceTree = "<group>"; };
+		DDFC4D9D19A8C1DC0045CEAC /* RTWAppIcon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-80.png"; sourceTree = "<group>"; };
+		DDFC4D9E19A8C1DC0045CEAC /* RTWAppIcon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-120.png"; sourceTree = "<group>"; };
+		DDFC4D9F19A8C1DC0045CEAC /* RTWAppIcon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWAppIcon-1024.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,12 +221,13 @@
 		DD1FD58C1989954E00ED6AEF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				DDFC4D9C19A8C1DC0045CEAC /* RTWAppIcon-58.png */,
+				DDFC4D9D19A8C1DC0045CEAC /* RTWAppIcon-80.png */,
+				DDFC4D9E19A8C1DC0045CEAC /* RTWAppIcon-120.png */,
+				DDFC4D9F19A8C1DC0045CEAC /* RTWAppIcon-1024.png */,
 				DD26684819A8950A00E0A71B /* shuttleIcon.png */,
 				DD26684919A8950A00E0A71B /* shuttleIcon@2x.png */,
 				DD26684619A8912900E0A71B /* shuttleMarker.png */,
-				DDE48D1D1993CFBC00581DF9 /* RTWAppIcon-58.png */,
-				DDE48D1E1993CFBC00581DF9 /* RTWAppIcon-80.png */,
-				DDE48D1F1993CFBC00581DF9 /* RTWAppIcon-120.png */,
 				DD74A1F51992965C0013DF4B /* RTWLaunchImage@2x.png */,
 				DDE48D081993C26500581DF9 /* RTWLaunchImage.png */,
 				DD1FD5941989954E00ED6AEF /* wfu_logo.gif */,
@@ -489,11 +492,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDE48D221993CFBC00581DF9 /* RTWAppIcon-120.png in Resources */,
 				DD1FD5871989953A00ED6AEF /* downtownStops.csv in Resources */,
 				DD1FD5891989953A00ED6AEF /* goldStops.csv in Resources */,
 				DD1FD5881989953A00ED6AEF /* freshmenStops.csv in Resources */,
 				DD1FD5A61989954E00ED6AEF /* freshmenRoute.csv in Resources */,
+				DDFC4DA219A8C1DC0045CEAC /* RTWAppIcon-120.png in Resources */,
 				DDE48D091993C26600581DF9 /* RTWLaunchImage.png in Resources */,
 				DDDB050B19817DA00074DC96 /* Images.xcassets in Resources */,
 				DD1FD58B1989953A00ED6AEF /* hanesStops.csv in Resources */,
@@ -501,16 +504,17 @@
 				DDE48E431993D6D900581DF9 /* GoogleMaps.bundle in Resources */,
 				DD1FD5A31989954E00ED6AEF /* wfu_logo.gif in Resources */,
 				DD1FD58A1989953A00ED6AEF /* grayDayStops.csv in Resources */,
+				DDFC4DA019A8C1DC0045CEAC /* RTWAppIcon-58.png in Resources */,
 				DD1FD5861989953A00ED6AEF /* blackStops.csv in Resources */,
-				DDE48D201993CFBC00581DF9 /* RTWAppIcon-58.png in Resources */,
 				DD1FD5A71989954E00ED6AEF /* goldRoute.csv in Resources */,
 				DD1FD5A91989954E00ED6AEF /* hanesRoute.csv in Resources */,
 				DD0EB71119901E0000A238AB /* grayNightStops.csv in Resources */,
 				DDDB04FD19817DA00074DC96 /* InfoPlist.strings in Resources */,
 				DD74A1F61992965C0013DF4B /* RTWLaunchImage@2x.png in Resources */,
-				DDE48D211993CFBC00581DF9 /* RTWAppIcon-80.png in Resources */,
 				DD0EB70F19901DE400A238AB /* grayNightRoute.csv in Resources */,
 				DDBC46F5198EEC3600D24FE5 /* shuttleNamesAndStops.csv in Resources */,
+				DDFC4DA319A8C1DC0045CEAC /* RTWAppIcon-1024.png in Resources */,
+				DDFC4DA119A8C1DC0045CEAC /* RTWAppIcon-80.png in Resources */,
 				DD26684B19A8950A00E0A71B /* shuttleIcon@2x.png in Resources */,
 				DD26684719A8912900E0A71B /* shuttleMarker.png in Resources */,
 				DDDB050619817DA00074DC96 /* Main.storyboard in Resources */,
