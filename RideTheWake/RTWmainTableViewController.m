@@ -104,6 +104,8 @@
             
         }
         
+        routeObject.xmlFile = [lineItem objectAtIndex:7];
+        
     }
     
 }
@@ -187,6 +189,7 @@
             mapVC.zoomLevel = [info zoomLevel];
             mapVC.centerPointLatitude = [info centerPointLatitude];
             mapVC.centerPointLongitude = [info centerPointLongitude];
+            mapVC.xmlFile = [info xmlFile];
             
         }
         
@@ -200,6 +203,7 @@
             mapVC.zoomLevel = [info zoomLevel];
             mapVC.centerPointLatitude = [info centerPointLatitude];
             mapVC.centerPointLongitude = [info centerPointLongitude];
+            mapVC.xmlFile = [info xmlFile];
             
         }
 

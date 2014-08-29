@@ -8,6 +8,7 @@
 
 #import "RTWmapViewController.h"
 #import "RTWscheduleTableViewController.h"
+#import "RTWxmlParser.h"
 
 @interface RTWmapViewController ()
 
@@ -27,6 +28,8 @@
     
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
     
+    [self loadShuttlesCurrentLocation];
+    
 }
 
 - (void)viewDidLoad
@@ -44,7 +47,6 @@
     
     [self loadRoutePath];
     
-    //[self loadShuttlesCurrentLocation];
 
 }
 
@@ -66,33 +68,24 @@
 - (void) loadShuttlesCurrentLocation
 {
  
-    // Get location from file off server
-    NSURL *serverURLPath = [NSURL URLWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/iPhone/%@", _routeIDName]];
+    NSURL *serverURLPath = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/%@.xml", _xmlFile]];
     
-    NSString *fileContents = [NSString stringWithContentsOfURL:serverURLPath encoding:NSUTF8StringEncoding error:NULL];
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:serverURLPath]];
     
-    NSArray *fileCoordinates = [fileContents componentsSeparatedByString:@","];
- 
-    if(([[fileCoordinates objectAtIndex:0] floatValue] != 0.0) && ([[fileCoordinates objectAtIndex:1] floatValue] != 0.0))
-    {
- 
-        CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake([[fileCoordinates objectAtIndex:0] floatValue], [[fileCoordinates objectAtIndex:1] floatValue]);
-     
-        GMSMarker *marker = [[GMSMarker alloc] init];
-        marker.position = shuttleCoordinates;
-        marker.map = self.mapView;
-        marker.icon = [UIImage imageNamed:@"shuttleMarker"];
-        marker.zIndex = 1000;
- 
-    }
- 
-    else {
+    RTWxmlParser *theDelegate = [[RTWxmlParser alloc] initXMLParser];
     
-        UIAlertView *shuttleIsOffline = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:@"This shuttle is currently not operating." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+    [parser setDelegate:theDelegate];
+    
+    [parser parse];
+
+    CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake(theDelegate.shuttleLocationLat, theDelegate.shuttleLocationLong);
  
-        [shuttleIsOffline show];
-        
-    }
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = shuttleCoordinates;
+    marker.map = self.mapView;
+    marker.icon = [UIImage imageNamed:@"shuttleMarker"];
+    marker.zIndex = 1000;
+ 
  
 }
 

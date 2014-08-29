@@ -22,4 +22,6 @@
 
 @property CLLocationDegrees centerPointLatitude;
 
+@property NSString* xmlFile;
+
 @end

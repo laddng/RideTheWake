@@ -24,4 +24,6 @@
 
 @property float centerPointLongitude;
 
+@property NSString *xmlFile;
+
 @end

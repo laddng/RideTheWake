@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD04098819A5DE390003476F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD04098719A5DE390003476F /* libsqlite3.0.dylib */; };
+		DD0915DF19B070CB00169C83 /* RTWxmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0915DE19B070CB00169C83 /* RTWxmlParser.m */; };
 		DD0EB70A198FE5DD00A238AB /* RTWrouteInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0EB709198FE5DD00A238AB /* RTWrouteInformation.m */; };
 		DD0EB70F19901DE400A238AB /* grayNightRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD0EB70E19901DE400A238AB /* grayNightRoute.csv */; };
 		DD0EB71119901E0000A238AB /* grayNightStops.csv in Resources */ = {isa = PBXBuildFile; fileRef = DD0EB71019901E0000A238AB /* grayNightStops.csv */; };
@@ -81,6 +82,8 @@
 
 /* Begin PBXFileReference section */
 		DD04098719A5DE390003476F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		DD0915DD19B070CB00169C83 /* RTWxmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWxmlParser.h; sourceTree = "<group>"; };
+		DD0915DE19B070CB00169C83 /* RTWxmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWxmlParser.m; sourceTree = "<group>"; };
 		DD0EB708198FE5DD00A238AB /* RTWrouteInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWrouteInformation.h; sourceTree = "<group>"; };
 		DD0EB709198FE5DD00A238AB /* RTWrouteInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWrouteInformation.m; sourceTree = "<group>"; };
 		DD0EB70E19901DE400A238AB /* grayNightRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grayNightRoute.csv; sourceTree = "<group>"; };
@@ -322,6 +325,8 @@
 				DDF0C65D198810CD003DE935 /* RTWmainTableViewController.m */,
 				DDDB052B19817E170074DC96 /* RTWmapViewController.h */,
 				DDDB052C19817E170074DC96 /* RTWmapViewController.m */,
+				DD0915DD19B070CB00169C83 /* RTWxmlParser.h */,
+				DD0915DE19B070CB00169C83 /* RTWxmlParser.m */,
 				DDDB050A19817DA00074DC96 /* Images.xcassets */,
 				DD74A1E4199287E40013DF4B /* sub classes */,
 				DD1FD58C1989954E00ED6AEF /* img */,
@@ -541,6 +546,7 @@
 			files = (
 				DDF0C65E198810CD003DE935 /* RTWmainTableViewController.m in Sources */,
 				DDF0C6611988200C003DE935 /* RTWrouteTableViewCell.m in Sources */,
+				DD0915DF19B070CB00169C83 /* RTWxmlParser.m in Sources */,
 				DD0EB70A198FE5DD00A238AB /* RTWrouteInformation.m in Sources */,
 				DDF0C664198821D4003DE935 /* RTWscheduleTableViewController.m in Sources */,
 				DDDB052D19817E170074DC96 /* RTWmapViewController.m in Sources */,
