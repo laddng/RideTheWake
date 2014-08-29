@@ -28,7 +28,7 @@
     
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
     
-    [self loadShuttlesCurrentLocation];
+    [self loadShuttlesCurrentLocation:nil];
     
 }
 
@@ -65,9 +65,11 @@
 
 }
 
-- (void) loadShuttlesCurrentLocation
+- (void) loadShuttlesCurrentLocation:(NSTimer*)timer
 {
  
+    [timer invalidate];
+    
     NSURL *serverURLPath = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/%@.xml", _xmlFile]];
     
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:serverURLPath]];
@@ -85,8 +87,9 @@
     marker.map = self.mapView;
     marker.icon = [UIImage imageNamed:@"shuttleMarker"];
     marker.zIndex = 1000;
- 
- 
+    
+    [NSTimer scheduledTimerWithTimeInterval:7.0 target:self selector:@selector(loadShuttlesCurrentLocation:) userInfo:nil repeats:YES];
+
 }
 
 - (void) loadShuttleStopMarkers
