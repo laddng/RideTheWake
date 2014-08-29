@@ -3,16 +3,16 @@
     {
       "idiom" : "iphone",
       "scale" : "1x",
-      "filename" : "shuttleIcon.png"
+      "filename" : "wfuLogo.png"
     },
     {
       "idiom" : "iphone",
       "scale" : "2x",
-      "filename" : "shuttleIcon-1.png"
+      "filename" : "wfuLogo@2x.png"
     },
     {
       "idiom" : "iphone",
-      "filename" : "shuttleIcon@2x.png",
+      "filename" : "wfuLogo@2x-1.png",
       "subtype" : "retina4",
       "scale" : "2x"
     }
