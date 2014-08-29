@@ -12,6 +12,8 @@
 
 @interface RTWmapViewController ()
 
+@property (strong, nonatomic) GMSMarker *shuttleMarker;
+
 @end
 
 @implementation RTWmapViewController
@@ -27,6 +29,11 @@
            value:@"Map Screen"];
     
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
+    _shuttleMarker = [[GMSMarker alloc] init];
+    _shuttleMarker.map = self.mapView;
+    _shuttleMarker.icon = [UIImage imageNamed:@"shuttleMarker"];
+    _shuttleMarker.zIndex = 1000;
     
     [self loadShuttlesCurrentLocation:nil];
     
@@ -82,11 +89,7 @@
 
     CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake(theDelegate.shuttleLocationLat, theDelegate.shuttleLocationLong);
  
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = shuttleCoordinates;
-    marker.map = self.mapView;
-    marker.icon = [UIImage imageNamed:@"shuttleMarker"];
-    marker.zIndex = 1000;
+    _shuttleMarker.position = shuttleCoordinates;
     
     [NSTimer scheduledTimerWithTimeInterval:7.0 target:self selector:@selector(loadShuttlesCurrentLocation:) userInfo:nil repeats:YES];
 
