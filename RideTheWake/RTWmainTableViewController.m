@@ -148,6 +148,8 @@
         
         [cell.routeStops setText:[info routeStops]];
         
+        cell.routeIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@ShuttleIcon",[info routeID]]];
+        
     }
     
     else
@@ -158,6 +160,8 @@
         cell.routeName.text = [info routeName];
         
         [cell.routeStops setText:[info routeStops]];
+        
+        cell.routeIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@ShuttleIcon",[info routeID]]];
         
     }
     
