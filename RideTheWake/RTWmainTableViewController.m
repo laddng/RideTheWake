@@ -10,6 +10,7 @@
 #import "RTWmapViewController.h"
 #import "RTWrouteTableViewCell.h"
 #import "RTWrouteInformation.h"
+#import "RTWShuttleInfoDelegate.h"
 
 @interface RTWmainTableViewController ()
 
@@ -64,49 +65,19 @@
 - (void) loadShuttleRouteNamesAndStops
 {
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"shuttleNamesAndStops" ofType:@"csv"];
+    NSString *pathToShuttleInformationFile = [[NSBundle mainBundle] pathForResource:@"shuttleInformation" ofType:@"xml"];
     
-    NSString *fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+    NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:pathToShuttleInformationFile]];
     
-    NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
+    RTWShuttleInfoDelegate *xmlParserDelegate = [[RTWShuttleInfoDelegate alloc] initXmlParser];
     
-    for (int i = 0; i < [fileLines count]; i++)
-    {
-        
-        NSArray *lineItem = [fileLines[i] componentsSeparatedByString:@"|"];
-        
-        RTWrouteInformation *routeObject = [[RTWrouteInformation alloc] init];
-        
-        routeObject.routeName = [lineItem objectAtIndex:0];
-        
-        routeObject.routeClass = [lineItem objectAtIndex:1];
-        
-        routeObject.routeID = [lineItem objectAtIndex:2];
-        
-        routeObject.routeStops = [lineItem objectAtIndex:3];
-        
-        routeObject.zoomLevel = [[lineItem objectAtIndex:4] intValue];
-        
-        routeObject.centerPointLatitude = [[lineItem objectAtIndex:5] floatValue];
-        
-        routeObject.centerPointLongitude = [[lineItem objectAtIndex:6] floatValue];
-        
-        if ([[lineItem objectAtIndex:1] isEqualToString:@"day"])
-        {
-            
-            [_dayRoutes addObject:routeObject];
-            
-        }
-        else if ([[lineItem objectAtIndex:1] isEqualToString:@"night"])
-        {
-         
-            [_nightRoutes addObject:routeObject];
-            
-        }
-        
-        routeObject.xmlFile = [lineItem objectAtIndex:7];
-        
-    }
+    [fileParser setDelegate:xmlParserDelegate];
+    
+    [fileParser parse];
+    
+    _dayRoutes = xmlParserDelegate.dayRoutes;
+    
+    _nightRoutes = xmlParserDelegate.nightRoutes;
     
 }
 
@@ -126,7 +97,9 @@
     
     else
     {
+        
         return [_nightRoutes count];
+        
     }
     
 }
@@ -181,34 +154,18 @@
         
         NSIndexPath *selectedRow = [self.tableView indexPathForSelectedRow];
         
-        RTWrouteInformation *info = [[RTWrouteInformation alloc] init];
-        
         if (_selectedView == 0)
         {
             
-            info = [_dayRoutes objectAtIndex:selectedRow.row];
-            
-            mapVC.routeID = [info routeName];
-            mapVC.routeIDName = [info routeID];
-            mapVC.zoomLevel = [info zoomLevel];
-            mapVC.centerPointLatitude = [info centerPointLatitude];
-            mapVC.centerPointLongitude = [info centerPointLongitude];
-            mapVC.xmlFile = [info xmlFile];
-            
+            mapVC.routeInfo = [_dayRoutes objectAtIndex:selectedRow.row];
+
         }
         
         else
         {
             
-            info = [_nightRoutes objectAtIndex:selectedRow.row];
-            
-            mapVC.routeID = [info routeName];
-            mapVC.routeIDName = [info routeID];
-            mapVC.zoomLevel = [info zoomLevel];
-            mapVC.centerPointLatitude = [info centerPointLatitude];
-            mapVC.centerPointLongitude = [info centerPointLongitude];
-            mapVC.xmlFile = [info xmlFile];
-            
+            mapVC.routeInfo = [_nightRoutes objectAtIndex:selectedRow.row];
+        
         }
 
         

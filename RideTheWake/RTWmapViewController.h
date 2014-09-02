@@ -7,21 +7,12 @@
 //
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "RTWrouteInformation.h"
 
 @interface RTWmapViewController : UIViewController<GMSMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet GMSMapView *mapView;
 
-@property NSString *routeID;
-
-@property NSString *routeIDName;
-
-@property int zoomLevel;
-
-@property CLLocationDegrees centerPointLongitude;
-
-@property CLLocationDegrees centerPointLatitude;
-
-@property NSString* xmlFile;
+@property RTWrouteInformation *routeInfo;
 
 @end

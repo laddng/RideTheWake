@@ -8,11 +8,15 @@
 
 #import "RTWmapViewController.h"
 #import "RTWscheduleTableViewController.h"
-#import "RTWxmlParser.h"
+#import "RTWShuttleCoordinatesDelegate.h"
+#import "RTWShuttleStopsDelegate.h"
+#import "RTWShuttleStop.h"
 
 @interface RTWmapViewController ()
 
 @property (strong, nonatomic) GMSMarker *shuttleMarker;
+
+@property (strong, nonatomic) NSMutableArray *stops;
 
 @end
 
@@ -46,8 +50,10 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:218/255.0 green:174/255.0 blue:77/255.0 alpha:1];
     
-    self.navigationItem.title = _routeID;
+    self.navigationItem.title = _routeInfo.routeName;
 
+    _stops = [[NSMutableArray alloc] init];
+    
     [self loadMapView];
     
     [self loadShuttleStopMarkers];
@@ -60,7 +66,7 @@
 - (void) loadMapView
 {
     
-    GMSCameraPosition *shuttle = [GMSCameraPosition cameraWithLatitude:_centerPointLatitude longitude:_centerPointLongitude zoom:_zoomLevel];
+    GMSCameraPosition *shuttle = [GMSCameraPosition cameraWithLatitude:_routeInfo.centerPointLatitude longitude:_routeInfo.centerPointLongitude zoom:_routeInfo.zoomLevel];
         
     self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:shuttle];
     self.mapView.myLocationEnabled = YES;
@@ -77,11 +83,11 @@
  
     [timer invalidate];
     
-    NSURL *serverURLPath = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/%@.xml", _xmlFile]];
+    NSURL *serverURLPath = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/%@.xml", _routeInfo.xmlFile]];
     
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:serverURLPath]];
     
-    RTWxmlParser *theDelegate = [[RTWxmlParser alloc] initXMLParser];
+    RTWShuttleCoordinatesDelegate *theDelegate = [[RTWShuttleCoordinatesDelegate alloc] initXMLParser];
     
     [parser setDelegate:theDelegate];
     
@@ -98,32 +104,40 @@
 - (void) loadShuttleStopMarkers
 {
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Stops", _routeIDName] ofType:@"csv"];
+    NSString *pathToStopsFile = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Stops", _routeInfo.routeID] ofType:@"xml"];
     
-    NSString *fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+    NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:pathToStopsFile]];
     
-    NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
+    RTWShuttleStopsDelegate *fileParserDelegate = [[RTWShuttleStopsDelegate alloc] initXmlParser];
     
-    for (int i = 0; i < [fileLines count]-1; i++)
+    [fileParser setDelegate:fileParserDelegate];
+    
+    [fileParser parse];
+    
+    _stops = fileParserDelegate.stops;
+    
+    for (int i = 0; i<[_stops count]-1; i++)
     {
-
+    
         GMSMarker *marker = [[GMSMarker alloc] init];
         
-        NSArray *lineItem = [fileLines[i] componentsSeparatedByString:@","];
+        RTWShuttleStop *stop = [[RTWShuttleStop alloc] init];
         
-        marker.position = CLLocationCoordinate2DMake([[lineItem objectAtIndex:0] floatValue], [[lineItem objectAtIndex:1] floatValue]);
-        marker.snippet = [lineItem objectAtIndex:2];
+        stop = [_stops objectAtIndex:i];
+        
+        marker.position = CLLocationCoordinate2DMake(stop.stopCoordinatesLat, stop.stopCoordinatesLon);
+        marker.snippet = [[_stops objectAtIndex:i] stopName];
         marker.map = self.mapView;
         marker.icon = [GMSMarker markerImageWithColor:[UIColor blueColor]];
         
     }
-
+    
 }
 
 - (void) loadRoutePath
 {
     
-    NSString* path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Route", _routeIDName] ofType:@"csv"];
+    NSString* path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Route", _routeInfo.routeID] ofType:@"csv"];
     
     NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     
@@ -155,8 +169,8 @@
         UINavigationController *navigationController = segue.destinationViewController;
         RTWscheduleTableViewController *scheduleVC = (RTWscheduleTableViewController * )navigationController.topViewController;
         
-        scheduleVC.routeID = _routeID;
-        scheduleVC.routeIDName = _routeIDName;
+        scheduleVC.routeID = _routeInfo.routeName;
+        scheduleVC.routeIDName = _routeInfo.routeID;
         
     }
     
