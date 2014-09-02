@@ -104,9 +104,9 @@
 - (void) loadShuttleStopMarkers
 {
     
-    NSString *pathToStopsFile = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Stops", _routeInfo.routeID] ofType:@"xml"];
+    NSURL *pathToStopsFile = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/shuttle/stops/%@Stops.xml", _routeInfo.xmlFile]];
     
-    NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:pathToStopsFile]];
+    NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:pathToStopsFile]];
     
     RTWShuttleStopsDelegate *fileParserDelegate = [[RTWShuttleStopsDelegate alloc] initXmlParser];
     
@@ -137,9 +137,9 @@
 - (void) loadRoutePath
 {
     
-    NSString* path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Route", _routeInfo.routeID] ofType:@"csv"];
+    NSURL *path = [NSURL URLWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/shuttle/routes/%@Route.csv", _routeInfo.routeID]];
     
-    NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+    NSString* fileContents = [NSString stringWithContentsOfURL:path encoding:NSUTF8StringEncoding error:NULL];
     
     NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
     
