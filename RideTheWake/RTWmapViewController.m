@@ -171,6 +171,7 @@
         
         scheduleVC.routeID = _routeInfo.routeName;
         scheduleVC.routeIDName = _routeInfo.routeID;
+        scheduleVC.stops = _stops;
         
     }
     

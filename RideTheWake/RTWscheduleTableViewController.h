@@ -14,6 +14,8 @@
 
 @property NSString *routeIDName;
 
+@property NSMutableArray *stops;
+
 @property (weak, nonatomic) IBOutlet UITextView *scheduleInfo;
 
 @end
