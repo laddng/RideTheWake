@@ -52,6 +52,24 @@
 
         route.xmlFile = [attributeDict valueForKey:@"serverShuttleURL"];
         
+        route.dayShuttleStarts = [attributeDict valueForKey:@"dayShuttleStarts"];
+        
+        route.dayShuttleEnds = [attributeDict valueForKey:@"dayShuttleEnds"];
+        
+        NSDate *now = [NSDate date];
+        
+        NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+        
+        [timeFormat setDateFormat:@"k:mm:ss z"];
+        
+        [timeFormat setDefaultDate:now];
+        
+        [timeFormat setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
+        
+        route.timeShuttleEnds = [timeFormat dateFromString:[attributeDict valueForKey:@"timeShuttleEnds"]];
+        
+        route.timeShuttleStarts = [timeFormat dateFromString:[attributeDict valueForKey:@"timeShuttleStarts"]];
+        
         if ([route.routeClass isEqualToString:@"day"])
         {
             

@@ -64,10 +64,15 @@
 
 - (void) loadShuttleRouteNamesAndStops
 {
+    /*
+    NSURL *serverURLPath = [[NSURL alloc] initWithString:@"http://shuttle.cs.wfu.edu/shuttle/stops/shuttleInformation.xml"];
     
-    NSString *pathToShuttleInformationFile = [[NSBundle mainBundle] pathForResource:@"shuttleInformation" ofType:@"xml"];
+    NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:serverURLPath]];
+    */
     
-    NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:pathToShuttleInformationFile]];
+    NSString *pathToStopsFile = [[NSBundle mainBundle] pathForResource:@"shuttleInformation" ofType:@"xml"];
+    
+    NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:pathToStopsFile]];
     
     RTWShuttleInfoDelegate *xmlParserDelegate = [[RTWShuttleInfoDelegate alloc] initXmlParser];
     

@@ -26,4 +26,12 @@
 
 @property NSString *xmlFile;
 
+@property NSDate *timeShuttleStarts;
+
+@property NSDate *timeShuttleEnds;
+
+@property NSDate *dayShuttleStarts;
+
+@property NSDate *dayShuttleEnds;
+
 @end

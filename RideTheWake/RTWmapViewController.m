@@ -39,8 +39,9 @@
     _shuttleMarker.icon = [UIImage imageNamed:@"shuttleMarker"];
     _shuttleMarker.zIndex = 1000;
     
-    [self loadShuttlesCurrentLocation:nil];
     
+    [self loadShuttlesCurrentLocation:nil];
+
 }
 
 - (void)viewDidLoad
@@ -56,10 +57,9 @@
     
     [self loadMapView];
     
-    [self loadShuttleStopMarkers];
-    
     [self loadRoutePath];
     
+    [self loadShuttleStopMarkers];
 
 }
 
@@ -104,9 +104,16 @@
 - (void) loadShuttleStopMarkers
 {
     
+    /*
     NSURL *pathToStopsFile = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/shuttle/stops/%@Stops.xml", _routeInfo.xmlFile]];
     
     NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:pathToStopsFile]];
+     
+     */
+    
+    NSString *pathToStopsFile = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Stops", _routeInfo.routeID] ofType:@"xml"];
+    
+    NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:pathToStopsFile]];
     
     RTWShuttleStopsDelegate *fileParserDelegate = [[RTWShuttleStopsDelegate alloc] initXmlParser];
     
@@ -132,14 +139,79 @@
         
     }
     
+    NSDate *currentTime = [NSDate date];
+    
+    NSDateFormatter *estTimeZone = [[NSDateFormatter alloc] init];
+    
+    [estTimeZone setDateFormat:@"h:mm a"];
+    
+    [estTimeZone setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:@"k:mm:ss z"];
+    
+    [formatter setDefaultDate:currentTime];
+    
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
+    
+    NSDate *midnightNight = [formatter dateFromString:@"23:59:59 EDT"];
+    
+    NSDate *midnightMorning = [formatter dateFromString:@"00:00:00 EDT"];
+    
+    NSString *currentTimeString = [estTimeZone stringFromDate:currentTime];
+    
+    NSString *startTimeString = [estTimeZone stringFromDate:_routeInfo.timeShuttleStarts];
+    
+    NSString *endTimeString = [estTimeZone stringFromDate:_routeInfo.timeShuttleEnds];
+    
+    if ([_routeInfo.routeClass isEqualToString:@"night"]) {
+        
+        
+        if ((([currentTime compare:_routeInfo.timeShuttleStarts] == NSOrderedDescending) && ([currentTime compare:midnightNight] == NSOrderedAscending)) || (([currentTime compare:midnightMorning] == NSOrderedDescending) && ([currentTime compare:_routeInfo.timeShuttleEnds] == NSOrderedAscending))) {
+            
+        }
+        
+        else {
+            
+            UIAlertView *shuttleIsOfflineAlert = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:[NSString stringWithFormat:@"The %@ shuttle is currently offline. It runs from %@ to %@. It is currently %@.", _routeInfo.routeName, startTimeString, endTimeString, currentTimeString] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+            
+            [shuttleIsOfflineAlert show];
+            
+        }
+    
+    }
+    
+    else if ([_routeInfo.routeClass isEqualToString:@"day"])
+    {
+        
+        if ((([currentTime compare:_routeInfo.timeShuttleStarts] == NSOrderedDescending) && ([currentTime compare:_routeInfo.timeShuttleEnds] == NSOrderedAscending))) {
+
+        }
+        
+        else {
+            
+            UIAlertView *shuttleIsOfflineAlert = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:[NSString stringWithFormat:@"The %@ shuttle is currently offline. It runs from %@ to %@. It is currently %@.", _routeInfo.routeName, startTimeString, endTimeString, currentTimeString] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+            
+            [shuttleIsOfflineAlert show];
+            
+        }
+        
+    }
+    
 }
 
 - (void) loadRoutePath
 {
-    
+    /*
     NSURL *path = [NSURL URLWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/shuttle/routes/%@Route.csv", _routeInfo.routeID]];
     
     NSString* fileContents = [NSString stringWithContentsOfURL:path encoding:NSUTF8StringEncoding error:NULL];
+    */
+    
+    NSString *pathToRouteFile = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@Route", _routeInfo.routeID] ofType:@"csv"];
+    
+    NSString *fileContents = [NSString stringWithContentsOfFile:pathToRouteFile encoding:NSUTF8StringEncoding error:NULL];
     
     NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
     

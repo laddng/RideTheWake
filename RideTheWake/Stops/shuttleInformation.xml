@@ -19,23 +19,31 @@ Attributes:
 - mapViewCenterCoordinateLon: This is the latitutde coordinate for the center of the map for each route. It is used to center the map on the route when the map loads for each route.
 
 - serverShuttleURL: This is the id for the URL to get the shuttle coordinates off the server. For an example, if "black" is used, then "shuttle.cs.wfu.edu/black.xml" is loaded.
+ 
+- timeShuttleStarts: This is the time that the shuttle starts service. Use 24 hour clock. It helps us tell the user when the shuttle is running or not.
+ 
+- timeShuttleEnds: This is the time that the shuttle ends its service. Use 24 hour clock. It helps us tell the user when the shuttle is running or not.
 
+- dayShuttleStarts: This is the day of the week that the shuttle starts its service. Use date ("Mon") abbreviations. It helps us tell the user when the shuttle is running or not.
+ 
+- dayShuttleEnds: This is the day of the week that the shuttle ends its service. Use date ("Fri") abbreviations. It helps us tell the user when the shuttle is running or not.
+ 
 -->
 
 <shuttles>
     
-    <shuttle name="Black Line" category="day" id="black" stops="Alaris Village, Deacon Ridge, Crowne Oaks, Bus Stop Shelter" mapViewInitialZoomLevel="14" mapViewCenterCoordinateLat="36.15100" mapViewCenterCoordinateLon="-80.27915" serverShuttleURL="black" >
+    <shuttle name="Black Line" category="day" id="black" stops="Alaris Village, Deacon Ridge, Crowne Oaks, Bus Stop Shelter" mapViewInitialZoomLevel="14" mapViewCenterCoordinateLat="36.15100" mapViewCenterCoordinateLon="-80.27915" serverShuttleURL="black" timeShuttleStarts="7:20:00 EDT" timeShuttleEnds="21:20:00 EDT" dayShuttleStarts="Mon" dayShuttleEnds="Fri">
         
-    <shuttle name="Gray Line" category="day" id="grayDay" stops="Sophomore Lot, Church Lot, Bus Stop Shelter, Freshman Lot" mapViewInitialZoomLevel="14" mapViewCenterCoordinateLat="36.13462" mapViewCenterCoordinateLon="-80.26795" serverShuttleURL="gray" >
+    <shuttle name="Gray Line" category="day" id="grayDay" stops="Sophomore Lot, Church Lot, Bus Stop Shelter, Freshman Lot" mapViewInitialZoomLevel="14" mapViewCenterCoordinateLat="36.13462" mapViewCenterCoordinateLon="-80.26795" serverShuttleURL="gray" timeShuttleStarts="7:28:00 EDT" timeShuttleEnds="18:58:00 EDT" dayShuttleStarts="Mon" dayShuttleEnds="Fri">
 
-    <shuttle name="Gray Line" category="night" id="grayNight" stops="ZSR, Sophomore Lot, Piccolo, Reynolds Gym, and more..." mapViewInitialZoomLevel="15" mapViewCenterCoordinateLat="36.13666" mapViewCenterCoordinateLon="-80.27808" serverShuttleURL="night" >
+    <shuttle name="Gray Line" category="night" id="grayNight" stops="ZSR, Sophomore Lot, Piccolo, Reynolds Gym, and more..." mapViewInitialZoomLevel="15" mapViewCenterCoordinateLat="36.13666" mapViewCenterCoordinateLon="-80.27808" serverShuttleURL="night" timeShuttleStarts="19:30:00 EDT" timeShuttleEnds="2:30:00 EDT" dayShuttleStarts="Mon" dayShuttleEnds="Fri">
 
-    <shuttle name="Gold Line" category="day" id="gold" stops="ZSR, Crowne Polo, Crowne Park, Crystal Lake, WFU Gatehouse" mapViewInitialZoomLevel="14" mapViewCenterCoordinateLat="36.13562" mapViewCenterCoordinateLon="-80.28790" serverShuttleURL="gold" >
+    <shuttle name="Gold Line" category="day" id="gold" stops="ZSR, Crowne Polo, Crowne Park, Crystal Lake, WFU Gatehouse" mapViewInitialZoomLevel="14" mapViewCenterCoordinateLat="36.13562" mapViewCenterCoordinateLon="-80.28790" serverShuttleURL="gold" timeShuttleStarts="7:20:00 EDT" timeShuttleEnds="21:20:00 EDT" dayShuttleStarts="Mon" dayShuttleEnds="Fri">
 
-    <shuttle name="Freshmen Line" category="night" id="freshmen" stops="Collins and South Hall, UCC Freshmen Lot" mapViewInitialZoomLevel="14" mapViewCenterCoordinateLat="36.13290" mapViewCenterCoordinateLon="-80.26672" serverShuttleURL="green" >
+    <shuttle name="Freshmen Line" category="night" id="freshmen" stops="Collins and South Hall, UCC Freshmen Lot" mapViewInitialZoomLevel="14" mapViewCenterCoordinateLat="36.13290" mapViewCenterCoordinateLon="-80.26672" serverShuttleURL="green" timeShuttleStarts="19:30:00 EDT" timeShuttleEnds="7:25:00 EDT" dayShuttleStarts="Mon" dayShuttleEnds="Thurs">
 
-    <shuttle name="Hanes Mall Line" category="day" id="hanes" stops="Benson, Hanes Mall, Sherwood Plaza, Target" mapViewInitialZoomLevel="12" mapViewCenterCoordinateLat="36.11834" mapViewCenterCoordinateLon="-80.29604" serverShuttleURL="hanes" >
+    <shuttle name="Hanes Mall Line" category="day" id="hanes" stops="Benson, Hanes Mall, Sherwood Plaza, Target" mapViewInitialZoomLevel="12" mapViewCenterCoordinateLat="36.11834" mapViewCenterCoordinateLon="-80.29604" serverShuttleURL="hanes" timeShuttleStarts="11:00:00 EDT" timeShuttleEnds="21:46:00 EDT" dayShuttleStarts="Sat" dayShuttleEnds="Sun">
 
-    <shuttle name="Deacon's Downtown Line" category="night" id="downtown" stops="The Last Resort, Tate's Bar, Finnigan's Pub, Benson" mapViewInitialZoomLevel="13" mapViewCenterCoordinateLat="36.12125" mapViewCenterCoordinateLon="-80.25824" serverShuttleURL="downtown" >
+    <shuttle name="Deacon's Downtown Line" category="night" id="downtown" stops="The Last Resort, Tate's Bar, Finnigan's Pub, Benson" mapViewInitialZoomLevel="13" mapViewCenterCoordinateLat="36.12125" mapViewCenterCoordinateLon="-80.25824" serverShuttleURL="downtown" timeShuttleStarts="21:30:00 EDT" timeShuttleEnds="2:45:00 EDT" dayShuttleStarts="Thurs" dayShuttleEnds="Sat">
 
 </shuttles>
