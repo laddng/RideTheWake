@@ -159,8 +159,6 @@
     
     NSDate *midnightMorning = [formatter dateFromString:@"00:00:00 EDT"];
     
-    NSString *currentTimeString = [estTimeZone stringFromDate:currentTime];
-    
     NSString *startTimeString = [estTimeZone stringFromDate:_routeInfo.timeShuttleStarts];
     
     NSString *endTimeString = [estTimeZone stringFromDate:_routeInfo.timeShuttleEnds];
@@ -174,7 +172,7 @@
         
         else {
             
-            UIAlertView *shuttleIsOfflineAlert = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:[NSString stringWithFormat:@"The %@ shuttle is currently offline. It runs from %@ to %@. It is currently %@.", _routeInfo.routeName, startTimeString, endTimeString, currentTimeString] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+            UIAlertView *shuttleIsOfflineAlert = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:[NSString stringWithFormat:@"The %@ shuttle is currently offline. It operates from %@ to %@.", _routeInfo.routeName, startTimeString, endTimeString] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
             
             [shuttleIsOfflineAlert show];
             
@@ -191,7 +189,7 @@
         
         else {
             
-            UIAlertView *shuttleIsOfflineAlert = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:[NSString stringWithFormat:@"The %@ shuttle is currently offline. It runs from %@ to %@. It is currently %@.", _routeInfo.routeName, startTimeString, endTimeString, currentTimeString] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+            UIAlertView *shuttleIsOfflineAlert = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:[NSString stringWithFormat:@"The %@ shuttle is currently offline. It operates from %@ to %@.", _routeInfo.routeName, startTimeString, endTimeString] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
             
             [shuttleIsOfflineAlert show];
             
