@@ -61,7 +61,7 @@
     
     RTWtimeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"time" forIndexPath:indexPath];
     
-    cell.time.text = [[_stops objectAtIndex:indexPath.row] stopTimes];
+    cell.time.text = [[_stops objectAtIndex:indexPath.section] stopTimes];
     
     return cell;
     
