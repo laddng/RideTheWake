@@ -40,10 +40,10 @@ Attributes:
 
     <shuttle name="Gold Line" category="day" id="gold" stops="ZSR, Crowne Polo, Crowne Park, Crystal Lake, WFU Gatehouse" mapViewInitialZoomLevel="14" mapViewCenterCoordinateLat="36.13562" mapViewCenterCoordinateLon="-80.28790" serverShuttleURL="gold" timeShuttleStarts="7:20:00 EDT" timeShuttleEnds="21:20:00 EDT" dayShuttleStarts="Mon" dayShuttleEnds="Fri">
 
-    <shuttle name="Freshmen Line" category="night" id="freshmen" stops="Collins and South Hall, UCC Freshmen Lot" mapViewInitialZoomLevel="14" mapViewCenterCoordinateLat="36.13290" mapViewCenterCoordinateLon="-80.26672" serverShuttleURL="green" timeShuttleStarts="19:30:00 EDT" timeShuttleEnds="7:25:00 EDT" dayShuttleStarts="Mon" dayShuttleEnds="Thurs">
+    <shuttle name="Freshmen Line" category="night" id="freshmen" stops="Collins and South Hall, UCC Freshmen Lot" mapViewInitialZoomLevel="14" mapViewCenterCoordinateLat="36.13290" mapViewCenterCoordinateLon="-80.26672" serverShuttleURL="green" timeShuttleStarts="19:30:00 EDT" timeShuttleEnds="7:25:00 EDT" dayShuttleStarts="Mon" dayShuttleEnds="Thu">
 
     <shuttle name="Hanes Mall Line" category="day" id="hanes" stops="Benson, Hanes Mall, Sherwood Plaza, Target" mapViewInitialZoomLevel="12" mapViewCenterCoordinateLat="36.11834" mapViewCenterCoordinateLon="-80.29604" serverShuttleURL="hanes" timeShuttleStarts="11:00:00 EDT" timeShuttleEnds="21:46:00 EDT" dayShuttleStarts="Sat" dayShuttleEnds="Sun">
 
-    <shuttle name="Deacon's Downtown Line" category="night" id="downtown" stops="The Last Resort, Tate's Bar, Finnigan's Pub, Benson" mapViewInitialZoomLevel="13" mapViewCenterCoordinateLat="36.12125" mapViewCenterCoordinateLon="-80.25824" serverShuttleURL="downtown" timeShuttleStarts="21:30:00 EDT" timeShuttleEnds="2:45:00 EDT" dayShuttleStarts="Thurs" dayShuttleEnds="Sat">
+    <shuttle name="Deacon's Downtown Line" category="night" id="downtown" stops="The Last Resort, Tate's Bar, Finnigan's Pub, Benson" mapViewInitialZoomLevel="13" mapViewCenterCoordinateLat="36.12125" mapViewCenterCoordinateLon="-80.25824" serverShuttleURL="downtown" timeShuttleStarts="21:30:00 EDT" timeShuttleEnds="2:45:00 EDT" dayShuttleStarts="Thu" dayShuttleEnds="Sat">
 
 </shuttles>

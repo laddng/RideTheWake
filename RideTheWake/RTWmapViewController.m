@@ -55,12 +55,86 @@
 
     _stops = [[NSMutableArray alloc] init];
     
+    [self shuttleIsOfflineWarning];
+    
     [self loadMapView];
     
     [self loadRoutePath];
     
     [self loadShuttleStopMarkers];
 
+}
+
+- (void) shuttleIsOfflineWarning
+{
+    
+    NSDate *currentTime = [NSDate date];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:@"kk:mm:ss z"];
+    
+    [formatter setDefaultDate:currentTime];
+    
+    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EDT"]];
+    
+    NSDate *midnightNight = [formatter dateFromString:@"23:59:59 EDT"];
+    
+    NSDate *midnightMorning = [formatter dateFromString:@"00:00:00 EDT"];
+    
+    NSDateFormatter *dayFormatter = [[NSDateFormatter alloc] init];
+    
+    [dayFormatter setDateFormat:@"eeee"];
+    
+    [dayFormatter setDefaultDate:currentTime];
+    
+    [dayFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+    
+    NSString *dayStartString = [dayFormatter stringFromDate: _routeInfo.dayShuttleStarts];
+    
+    NSString *dayEndString = [dayFormatter stringFromDate:_routeInfo.dayShuttleEnds];
+    
+    NSString *startTimeString = [self printEasternTime:_routeInfo.timeShuttleStarts];
+    
+    NSString *endTimeString = [self printEasternTime:_routeInfo.timeShuttleEnds];
+    
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    
+    dayComponent.day = 2;
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    
+    NSDate *endDayPlusOne = [theCalendar dateByAddingComponents:dayComponent toDate:_routeInfo.dayShuttleEnds options:0];
+    
+    if (([_routeInfo.routeClass isEqualToString:@"night"]&&(((([currentTime compare:_routeInfo.timeShuttleStarts] == NSOrderedDescending) && ([currentTime compare:midnightNight] == NSOrderedAscending))|| (([currentTime compare:midnightMorning] == NSOrderedDescending) && ([currentTime compare:_routeInfo.timeShuttleEnds] == NSOrderedAscending)))&& ((([currentTime compare:_routeInfo.dayShuttleStarts] == NSOrderedDescending) && ([currentTime compare:_routeInfo.dayShuttleEnds] == NSOrderedAscending)))))|| ([_routeInfo.routeClass isEqualToString:@"night"]&& (([currentTime compare:midnightMorning] == NSOrderedDescending) && ([currentTime compare:_routeInfo.timeShuttleEnds] == NSOrderedAscending)) && (([currentTime compare:_routeInfo.dayShuttleStarts] == NSOrderedDescending) && ([currentTime compare:endDayPlusOne] == NSOrderedAscending))))
+    {}
+    
+    else if ([_routeInfo.routeClass isEqualToString:@"day"]&& ((([currentTime compare:_routeInfo.timeShuttleStarts] == NSOrderedDescending) && ([currentTime compare:_routeInfo.timeShuttleEnds] == NSOrderedAscending)))&& ((([currentTime compare:_routeInfo.dayShuttleStarts] == NSOrderedDescending) && ([currentTime compare:_routeInfo.dayShuttleEnds] == NSOrderedAscending))))
+    {}
+    
+    else {
+        
+        UIAlertView *shuttleIsOfflineAlert = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:[NSString stringWithFormat:@"The %@ shuttle is not operating at this time. It runs from %@ to %@, %@ thru %@.", _routeInfo.routeName, startTimeString, endTimeString, dayStartString, dayEndString] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        
+        [shuttleIsOfflineAlert show];
+        
+    }
+    
+}
+
+- (NSString *) printEasternTime:(NSDate*)date
+{
+    
+    NSDateFormatter *estTimeZone = [[NSDateFormatter alloc] init];
+    
+    [estTimeZone setDateFormat:@"h:mm a"];
+    
+    [estTimeZone setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EDT"]];
+    
+    NSString *string = [estTimeZone stringFromDate:date];
+    
+    return string;
+    
 }
 
 - (void) loadMapView
@@ -129,64 +203,6 @@
         marker.snippet = [[_stops objectAtIndex:i] stopName];
         marker.map = self.mapView;
         marker.icon = [GMSMarker markerImageWithColor:[UIColor blueColor]];
-        
-    }
-    
-    NSDate *currentTime = [NSDate date];
-    
-    NSDateFormatter *estTimeZone = [[NSDateFormatter alloc] init];
-    
-    [estTimeZone setDateFormat:@"h:mm a"];
-    
-    [estTimeZone setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    
-    [formatter setDateFormat:@"k:mm:ss z"];
-    
-    [formatter setDefaultDate:currentTime];
-    
-    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
-    
-    NSDate *midnightNight = [formatter dateFromString:@"23:59:59 EDT"];
-    
-    NSDate *midnightMorning = [formatter dateFromString:@"00:00:00 EDT"];
-    
-    NSString *startTimeString = [estTimeZone stringFromDate:_routeInfo.timeShuttleStarts];
-    
-    NSString *endTimeString = [estTimeZone stringFromDate:_routeInfo.timeShuttleEnds];
-    
-    if ([_routeInfo.routeClass isEqualToString:@"night"]) {
-        
-        
-        if ((([currentTime compare:_routeInfo.timeShuttleStarts] == NSOrderedDescending) && ([currentTime compare:midnightNight] == NSOrderedAscending)) || (([currentTime compare:midnightMorning] == NSOrderedDescending) && ([currentTime compare:_routeInfo.timeShuttleEnds] == NSOrderedAscending))) {
-            
-        }
-        
-        else {
-            
-            UIAlertView *shuttleIsOfflineAlert = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:[NSString stringWithFormat:@"The %@ shuttle is currently offline. It operates from %@ to %@.", _routeInfo.routeName, startTimeString, endTimeString] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
-            
-            [shuttleIsOfflineAlert show];
-            
-        }
-    
-    }
-    
-    else if ([_routeInfo.routeClass isEqualToString:@"day"])
-    {
-        
-        if ((([currentTime compare:_routeInfo.timeShuttleStarts] == NSOrderedDescending) && ([currentTime compare:_routeInfo.timeShuttleEnds] == NSOrderedAscending))) {
-
-        }
-        
-        else {
-            
-            UIAlertView *shuttleIsOfflineAlert = [[UIAlertView alloc] initWithTitle:@"Shuttle is offline" message:[NSString stringWithFormat:@"The %@ shuttle is currently offline. It operates from %@ to %@.", _routeInfo.routeName, startTimeString, endTimeString] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
-            
-            [shuttleIsOfflineAlert show];
-            
-        }
         
     }
     
