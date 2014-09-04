@@ -52,15 +52,43 @@
 
         route.xmlFile = [attributeDict valueForKey:@"serverShuttleURL"];
         
-        route.dayShuttleStarts = [attributeDict valueForKey:@"dayShuttleStarts"];
-        
-        route.dayShuttleEnds = [attributeDict valueForKey:@"dayShuttleEnds"];
-        
         NSDate *now = [NSDate date];
+
+        NSDateFormatter *dayOfWeek = [[NSDateFormatter alloc] init];
+        
+        [dayOfWeek setDateFormat:@"eee kk:mm:ss z"];
+        
+        [dayOfWeek setDefaultDate:now];
+        
+        [dayOfWeek setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+
+        route.dayShuttleStarts = [dayOfWeek dateFromString:[NSString stringWithFormat:@"%@ 01:00:00 EDT", [attributeDict valueForKey:@"dayShuttleStarts"]]];
+        
+        route.dayShuttleEnds = [dayOfWeek dateFromString:[NSString stringWithFormat:@"%@ 23:59:59 EDT", [attributeDict valueForKey:@"dayShuttleEnds"]]];
+        
+        if ([route.dayShuttleStarts compare:route.dayShuttleEnds] == NSOrderedDescending)
+        {
+            NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+            NSDateComponents *todayComponents = [gregorian components:(NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit) fromDate:route.dayShuttleEnds];
+            NSInteger theDay = [todayComponents day];
+            NSInteger theMonth = [todayComponents month];
+            NSInteger theYear = [todayComponents year];
+            
+            NSDateComponents *components = [[NSDateComponents alloc] init];
+            [components setDay:theDay];
+            [components setMonth:theMonth];
+            [components setYear:theYear];
+            NSDate *thisDate = [gregorian dateFromComponents:components];
+            
+            NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+            [offsetComponents setDay:7];
+            route.dayShuttleEnds = [gregorian dateByAddingComponents:offsetComponents toDate:thisDate options:0];
+
+        }
         
         NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
         
-        [timeFormat setDateFormat:@"k:mm:ss z"];
+        [timeFormat setDateFormat:@"kk:mm:ss z"];
         
         [timeFormat setDefaultDate:now];
         
