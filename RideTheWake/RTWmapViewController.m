@@ -180,7 +180,7 @@
 - (void) loadShuttleStopMarkers
 {
     
-    NSURL *pathToStopsFile = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://152.17.49.23/shuttleApp/stops/%@Stops.xml", _routeInfo.xmlFile]];
+    NSURL *pathToStopsFile = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://152.17.49.23/%@Stops.xml", _routeInfo.xmlFile]];
     
     NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:pathToStopsFile]];
     
@@ -213,7 +213,7 @@
 - (void) loadRoutePath
 {
 
-    NSURL *path = [NSURL URLWithString:[NSString stringWithFormat:@"http://152.17.49.23/shuttleApp/routes/%@Route.csv", _routeInfo.routeID]];
+    NSURL *path = [NSURL URLWithString:[NSString stringWithFormat:@"http://152.17.49.23/%@Route.csv", _routeInfo.routeID]];
     
     NSString* fileContents = [NSString stringWithContentsOfURL:path encoding:NSUTF8StringEncoding error:NULL];
     
