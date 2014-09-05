@@ -24,13 +24,14 @@
     
     [super viewDidAppear:animated];
     
+    /*
     id tracker = [[GAI sharedInstance] defaultTracker];
     
     [tracker set:kGAIScreenName
            value:@"Schedule Screen"];
     
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
+    */
 }
 
 - (void)viewDidLoad

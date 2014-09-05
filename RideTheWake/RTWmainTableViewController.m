@@ -29,12 +29,14 @@
     
     [super viewDidAppear:animated];
     
+    /*
     id tracker = [[GAI sharedInstance] defaultTracker];
     
     [tracker set:kGAIScreenName
            value:@"Main Screen"];
     
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    */
     
 }
 
@@ -65,7 +67,7 @@
 - (void) loadShuttleRouteNamesAndStops
 {
 
-    NSURL *serverURLPath = [[NSURL alloc] initWithString:@"http://shuttle.cs.wfu.edu/shuttle/stops/shuttleInformation.xml"];
+    NSURL *serverURLPath = [[NSURL alloc] initWithString:@"http://152.17.49.23/shuttleApp/stops/shuttleInformation.xml"];
     
     NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:serverURLPath]];
 

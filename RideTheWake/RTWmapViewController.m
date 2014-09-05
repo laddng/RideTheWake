@@ -27,12 +27,14 @@
     
     [super viewDidAppear:animated];
     
+    /*
     id tracker = [[GAI sharedInstance] defaultTracker];
     
     [tracker set:kGAIScreenName
            value:@"Map Screen"];
     
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    */
     
     _shuttleMarker = [[GMSMarker alloc] init];
     _shuttleMarker.map = self.mapView;
@@ -157,7 +159,7 @@
  
     [timer invalidate];
     
-    NSURL *serverURLPath = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/%@.xml", _routeInfo.xmlFile]];
+    NSURL *serverURLPath = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://152.17.49.23/%@.xml", _routeInfo.xmlFile]];
     
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:serverURLPath]];
     
@@ -178,7 +180,7 @@
 - (void) loadShuttleStopMarkers
 {
     
-    NSURL *pathToStopsFile = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/shuttle/stops/%@Stops.xml", _routeInfo.xmlFile]];
+    NSURL *pathToStopsFile = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://152.17.49.23/shuttleApp/stops/%@Stops.xml", _routeInfo.xmlFile]];
     
     NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:pathToStopsFile]];
     
@@ -211,7 +213,7 @@
 - (void) loadRoutePath
 {
 
-    NSURL *path = [NSURL URLWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/shuttle/routes/%@Route.csv", _routeInfo.routeID]];
+    NSURL *path = [NSURL URLWithString:[NSString stringWithFormat:@"http://152.17.49.23/shuttleApp/routes/%@Route.csv", _routeInfo.routeID]];
     
     NSString* fileContents = [NSString stringWithContentsOfURL:path encoding:NSUTF8StringEncoding error:NULL];
     

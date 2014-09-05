@@ -15,13 +15,14 @@
 {
     [GMSServices provideAPIKey:@"AIzaSyA0g2Dhwmn_rjrurdG1DnsHtCWCEoQpAis"];
 
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    /*[GAI sharedInstance].trackUncaughtExceptions = YES;
     
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
     
     [GAI sharedInstance].dispatchInterval = 20;
     
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-53602812-1"];
+    */
     
     return YES;
 }
