@@ -67,7 +67,7 @@
 - (void) loadShuttleRouteNamesAndStops
 {
 
-    NSURL *serverURLPath = [[NSURL alloc] initWithString:@"http://152.17.49.23/shuttleInformation.xml"];
+    NSURL *serverURLPath = [[NSURL alloc] initWithString:@"http://shuttle.cs.wfu.edu/stops/shuttleInformation.xml"];
     
     NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:serverURLPath]];
 
