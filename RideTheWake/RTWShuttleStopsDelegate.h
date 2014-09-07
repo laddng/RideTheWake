@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "RTWAppDelegate.h"
 
-@interface RTWShuttleStopsDelegate : NSXMLParser <NSXMLParserDelegate> {
+@interface RTWShuttleStopsDelegate : NSObject <NSXMLParserDelegate> {
     
     RTWAppDelegate *appDelegate;
     

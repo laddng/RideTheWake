@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "RTWAppDelegate.h"
 
-@interface RTWShuttleCoordinatesDelegate : NSXMLParser<NSXMLParserDelegate>{
+@interface RTWShuttleCoordinatesDelegate : NSObject<NSXMLParserDelegate>{
     
     RTWAppDelegate *appdelegate;
     
