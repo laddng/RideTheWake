@@ -49,6 +49,7 @@
 		DDDF003019C3FCC400D19EAA /* grayDayShuttleMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF002919C3FCC400D19EAA /* grayDayShuttleMarker.png */; };
 		DDDF003119C3FCC400D19EAA /* grayNightShuttleMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF002A19C3FCC400D19EAA /* grayNightShuttleMarker.png */; };
 		DDDF003219C3FCC400D19EAA /* hanesShuttleMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF002B19C3FCC400D19EAA /* hanesShuttleMarker.png */; };
+		DDDF003A19C4030200D19EAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDF003919C4030200D19EAA /* Images.xcassets */; };
 		DDE48D161993CBD200581DF9 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE48D151993CBD200581DF9 /* libGoogleAnalyticsServices.a */; };
 		DDE48E411993D6BD00581DF9 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE48E401993D6BD00581DF9 /* GoogleMaps.framework */; };
 		DDE48E431993D6D900581DF9 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DDE48E421993D6D900581DF9 /* GoogleMaps.bundle */; };
@@ -150,6 +151,7 @@
 		DDDF002919C3FCC400D19EAA /* grayDayShuttleMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayDayShuttleMarker.png; sourceTree = "<group>"; };
 		DDDF002A19C3FCC400D19EAA /* grayNightShuttleMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayNightShuttleMarker.png; sourceTree = "<group>"; };
 		DDDF002B19C3FCC400D19EAA /* hanesShuttleMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanesShuttleMarker.png; sourceTree = "<group>"; };
+		DDDF003919C4030200D19EAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DDE48D0B1993CB8A00581DF9 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		DDE48D0C1993CB8A00581DF9 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		DDE48D0D1993CB8A00581DF9 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				DDDB052C19817E170074DC96 /* RTWmapViewController.m */,
 				DD74A1E4199287E40013DF4B /* Sub Classes */,
 				DD8D668419B444B60030B6B8 /* XML Delegates */,
+				DDDF003919C4030200D19EAA /* Images.xcassets */,
 				DD1FD58C1989954E00ED6AEF /* img */,
 				DDE48D0A1993CAAA00581DF9 /* GA */,
 				DDDB04F919817DA00074DC96 /* Supporting Files */,
@@ -526,6 +529,7 @@
 				DDFC4DA219A8C1DC0045CEAC /* RTWAppIcon-120.png in Resources */,
 				DDDF003019C3FCC400D19EAA /* grayDayShuttleMarker.png in Resources */,
 				DDA1209D19B176E90045C1B1 /* downtownShuttleIcon@2x.png in Resources */,
+				DDDF003A19C4030200D19EAA /* Images.xcassets in Resources */,
 				DDDF002319C3F0DB00D19EAA /* RTWLaunchImage@2x.png in Resources */,
 				DDE48E431993D6D900581DF9 /* GoogleMaps.bundle in Resources */,
 				DDA1209119B174870045C1B1 /* goldShuttleIcon@2x.png in Resources */,
