@@ -13,6 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     [GMSServices provideAPIKey:@"AIzaSyA0g2Dhwmn_rjrurdG1DnsHtCWCEoQpAis"];
 
     /*[GAI sharedInstance].trackUncaughtExceptions = YES;
@@ -25,6 +26,7 @@
     */
     
     return YES;
+    
 }
 
 @end

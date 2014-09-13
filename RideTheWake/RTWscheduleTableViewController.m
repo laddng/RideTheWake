@@ -13,6 +13,7 @@
 @interface RTWscheduleTableViewController ()
 
 @property NSMutableArray *stopNames;
+
 @property NSMutableArray *stopTimes;
 
 @end
@@ -32,6 +33,7 @@
     
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
     */
+    
 }
 
 - (void)viewDidLoad
@@ -47,7 +49,9 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    
     return [_stops count]-1;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

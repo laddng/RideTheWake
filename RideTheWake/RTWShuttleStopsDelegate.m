@@ -47,11 +47,7 @@
     if([elementName isEqualToString:@"stopInformation"])
     {
         
-        NSString *stopInfo = [[NSString alloc] init];
-        
-        stopInfo = [attributeDict objectForKey:@"info"];
-        
-        [_stops addObject:stopInfo];
+        [_stops addObject:[attributeDict objectForKey:@"info"]];
         
     }
     

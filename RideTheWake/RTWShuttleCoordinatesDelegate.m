@@ -33,6 +33,14 @@
         
         _shuttleLocationLong = [[attributeDict valueForKey:@"lng"] floatValue];
         
+        NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+        
+        [timeFormat setDateFormat:@"kk:mm:ss"];
+        
+        [timeFormat setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EDT"]];
+        
+        _updateTime = [timeFormat dateFromString:[attributeDict valueForKey:@"time"]];
+        
     }
     
 }

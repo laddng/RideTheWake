@@ -19,6 +19,8 @@
 
 @property float shuttleLocationLong;
 
+@property NSDate *updateTime;
+
 - (RTWShuttleCoordinatesDelegate*) initXMLParser;
 
 @end

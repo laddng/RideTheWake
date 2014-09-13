@@ -11,7 +11,9 @@
 @interface RTWrouteTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *routeName;
+
 @property (weak, nonatomic) IBOutlet UIImageView *routeIcon;
+
 @property (weak, nonatomic) IBOutlet UITextView *routeStops;
 
 @end

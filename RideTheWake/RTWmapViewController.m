@@ -154,27 +154,30 @@
 
 }
 
-- (void) loadShuttlesCurrentLocation:(NSTimer*)timer
+- (void) loadRoutePath
 {
- 
-    [timer invalidate];
     
-    NSURL *serverURLPath = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/%@.xml", _routeInfo.xmlFile]];
+    NSURL *path = [NSURL URLWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/routes/%@Route.csv", _routeInfo.routeID]];
     
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:serverURLPath]];
+    NSString* fileContents = [NSString stringWithContentsOfURL:path encoding:NSUTF8StringEncoding error:NULL];
     
-    RTWShuttleCoordinatesDelegate *theDelegate = [[RTWShuttleCoordinatesDelegate alloc] initXMLParser];
+    NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
     
-    [parser setDelegate:theDelegate];
+    GMSMutablePath *polylineCoordinates = [GMSMutablePath path];
     
-    [parser parse];
-
-    CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake(theDelegate.shuttleLocationLat, theDelegate.shuttleLocationLong);
- 
-    _shuttleMarker.position = shuttleCoordinates;
+    for (int i = 0; i < [fileLines count]; i++)
+    {
+        NSArray *lineItem = [fileLines[i] componentsSeparatedByString:@","];
+        
+        [polylineCoordinates addCoordinate:CLLocationCoordinate2DMake([[lineItem objectAtIndex:0] floatValue], [[lineItem objectAtIndex:1] floatValue])];
+        
+    }
     
-    [NSTimer scheduledTimerWithTimeInterval:7.0 target:self selector:@selector(loadShuttlesCurrentLocation:) userInfo:nil repeats:YES];
-
+    GMSPolyline *polyline = [GMSPolyline polylineWithPath:polylineCoordinates];
+    polyline.map = _mapView;
+    polyline.strokeWidth = 8.f;
+    polyline.strokeColor = [UIColor colorWithRed:0/255.0 green:179/255.0 blue:253/255.0 alpha:1];
+    
 }
 
 - (void) loadShuttleStopMarkers
@@ -194,14 +197,10 @@
     
     for (int i = 0; i<[_stops count]-1; i++)
     {
-    
+        
         GMSMarker *marker = [[GMSMarker alloc] init];
         
-        RTWShuttleStop *stop = [[RTWShuttleStop alloc] init];
-        
-        stop = [_stops objectAtIndex:i];
-        
-        marker.position = CLLocationCoordinate2DMake(stop.stopCoordinatesLat, stop.stopCoordinatesLon);
+        marker.position = CLLocationCoordinate2DMake([[_stops objectAtIndex:i] stopCoordinatesLat], [[_stops objectAtIndex:i] stopCoordinatesLon]);
         marker.snippet = [[_stops objectAtIndex:i] stopName];
         marker.map = self.mapView;
         marker.icon = [GMSMarker markerImageWithColor:[UIColor blueColor]];
@@ -210,29 +209,28 @@
     
 }
 
-- (void) loadRoutePath
+- (void) loadShuttlesCurrentLocation:(NSTimer*)timer
 {
+ 
+    [timer invalidate];
+    
+    NSURL *serverURLPath = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/%@.xml", _routeInfo.xmlFile]];
+    
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:serverURLPath]];
+    
+    RTWShuttleCoordinatesDelegate *theDelegate = [[RTWShuttleCoordinatesDelegate alloc] initXMLParser];
+    
+    [parser setDelegate:theDelegate];
+    
+    [parser parse];
 
-    NSURL *path = [NSURL URLWithString:[NSString stringWithFormat:@"http://shuttle.cs.wfu.edu/routes/%@Route.csv", _routeInfo.routeID]];
+    CLLocationCoordinate2D shuttleCoordinates = CLLocationCoordinate2DMake(theDelegate.shuttleLocationLat, theDelegate.shuttleLocationLong);
+ 
+    _shuttleMarker.position = shuttleCoordinates;
     
-    NSString* fileContents = [NSString stringWithContentsOfURL:path encoding:NSUTF8StringEncoding error:NULL];
+    _shuttleMarker.snippet = [NSString stringWithFormat:@"Updated at %@", [self printEasternTime:theDelegate.updateTime]];
     
-    NSArray *fileLines = [fileContents componentsSeparatedByString:@"\n"];
-    
-    GMSMutablePath *polylineCoordinates = [GMSMutablePath path];
-
-    for (int i = 0; i < [fileLines count]; i++)
-    {
-        NSArray *lineItem = [fileLines[i] componentsSeparatedByString:@","];
-        
-        [polylineCoordinates addCoordinate:CLLocationCoordinate2DMake([[lineItem objectAtIndex:0] floatValue], [[lineItem objectAtIndex:1] floatValue])];
-        
-    }
-    
-    GMSPolyline *polyline = [GMSPolyline polylineWithPath:polylineCoordinates];
-    polyline.map = _mapView;
-    polyline.strokeWidth = 8.f;
-    polyline.strokeColor = [UIColor colorWithRed:0/255.0 green:179/255.0 blue:253/255.0 alpha:1];
+    [NSTimer scheduledTimerWithTimeInterval:7.0 target:self selector:@selector(loadShuttlesCurrentLocation:) userInfo:nil repeats:YES];
 
 }
 

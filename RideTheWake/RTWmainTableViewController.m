@@ -55,22 +55,12 @@
     
 }
 
-- (IBAction) didChangeSelectedView: (id) sender
-{
-    
-    _selectedView = (int)_segmentControlItem.selectedSegmentIndex;
- 
-    [self.tableView reloadData];
-    
-}
-
 - (void) loadShuttleRouteNamesAndStops
 {
-
+    
     NSURL *serverURLPath = [[NSURL alloc] initWithString:@"http://shuttle.cs.wfu.edu/stops/shuttleInformation.xml"];
     
     NSXMLParser *fileParser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfURL:serverURLPath]];
-
     
     RTWShuttleInfoDelegate *xmlParserDelegate = [[RTWShuttleInfoDelegate alloc] initXmlParser];
     
@@ -84,13 +74,25 @@
     
 }
 
+- (IBAction) didChangeSelectedView: (id) sender
+{
+    
+    _selectedView = (int)_segmentControlItem.selectedSegmentIndex;
+ 
+    [self.tableView reloadData];
+    
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    
     return 1;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
     if (_selectedView == 0)
     {
         
@@ -112,32 +114,25 @@
     
     RTWrouteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"route" forIndexPath:indexPath];
     
-    RTWrouteInformation *info = [[RTWrouteInformation alloc] init];
-    
-    
     if (_selectedView == 0)
     {
         
-        info = [_dayRoutes objectAtIndex:indexPath.row];
+        cell.routeName.text = [[_dayRoutes objectAtIndex:indexPath.row] routeName];
         
-        cell.routeName.text = [info routeName];
+        [cell.routeStops setText:[[_dayRoutes objectAtIndex:indexPath.row] routeStops]];
         
-        [cell.routeStops setText:[info routeStops]];
-        
-        cell.routeIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@ShuttleIcon",[info routeID]]];
+        cell.routeIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@ShuttleIcon",[[_dayRoutes objectAtIndex:indexPath.row] routeID]]];
         
     }
     
     else
     {
         
-        info = [_nightRoutes objectAtIndex:indexPath.row];
+        cell.routeName.text = [[_nightRoutes objectAtIndex:indexPath.row] routeName];
         
-        cell.routeName.text = [info routeName];
+        [cell.routeStops setText:[[_nightRoutes objectAtIndex:indexPath.row] routeStops]];
         
-        [cell.routeStops setText:[info routeStops]];
-        
-        cell.routeIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@ShuttleIcon",[info routeID]]];
+        cell.routeIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@ShuttleIcon",[[_nightRoutes objectAtIndex:indexPath.row] routeID]]];
         
     }
     
