@@ -34,4 +34,10 @@
 
 @property NSDate *dayShuttleEnds;
 
+@property float lineColorR;
+
+@property float lineColorG;
+
+@property float lineColorB;
+
 @end

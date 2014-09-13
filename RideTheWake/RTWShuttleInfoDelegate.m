@@ -52,6 +52,12 @@
 
         route.xmlFile = [attributeDict valueForKey:@"serverShuttleURL"];
         
+        route.lineColorR = [[attributeDict valueForKey:@"lineColorR"] floatValue];
+        
+        route.lineColorG = [[attributeDict valueForKey:@"lineColorG"] floatValue];
+        
+        route.lineColorB = [[attributeDict valueForKey:@"lineColorB"] floatValue];
+        
         NSDate *now = [NSDate date];
 
         NSDateFormatter *dayOfWeek = [[NSDateFormatter alloc] init];
