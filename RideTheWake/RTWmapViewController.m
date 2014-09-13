@@ -38,7 +38,7 @@
     
     _shuttleMarker = [[GMSMarker alloc] init];
     _shuttleMarker.map = self.mapView;
-    _shuttleMarker.icon = [UIImage imageNamed:[NSString stringWithFormat:@"%@ShuttleMarker.png", [_routeInfo routeID]]];
+    _shuttleMarker.icon = [UIImage imageNamed:[NSString stringWithFormat:@"%@ShuttleMarker", [_routeInfo routeID]]];
     _shuttleMarker.zIndex = 1000;
     
     
@@ -176,7 +176,7 @@
     GMSPolyline *polyline = [GMSPolyline polylineWithPath:polylineCoordinates];
     polyline.map = _mapView;
     polyline.strokeWidth = 8.f;
-    polyline.strokeColor = [UIColor colorWithRed:[_routeInfo lineColorR]/255.0 green:179/[_routeInfo lineColorG]/255.0 blue:[_routeInfo lineColorB]/255.0 alpha:1];
+    polyline.strokeColor = [UIColor colorWithRed:0/255.0 green:179/255.0 blue:253/255.0 alpha:1];
     
 }
 

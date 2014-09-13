@@ -40,8 +40,6 @@
 		DDDB051C19817DA00074DC96 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDDB051A19817DA00074DC96 /* InfoPlist.strings */; };
 		DDDB051E19817DA00074DC96 /* RideTheWakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDB051D19817DA00074DC96 /* RideTheWakeTests.m */; };
 		DDDB052D19817E170074DC96 /* RTWmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDB052C19817E170074DC96 /* RTWmapViewController.m */; };
-		DDDF002219C3F0DB00D19EAA /* RTWLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF002019C3F0DB00D19EAA /* RTWLaunchImage.png */; };
-		DDDF002319C3F0DB00D19EAA /* RTWLaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF002119C3F0DB00D19EAA /* RTWLaunchImage@2x.png */; };
 		DDDF002C19C3FCC400D19EAA /* blackShuttleMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF002519C3FCC400D19EAA /* blackShuttleMarker.png */; };
 		DDDF002D19C3FCC400D19EAA /* downtownShuttleMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF002619C3FCC400D19EAA /* downtownShuttleMarker.png */; };
 		DDDF002E19C3FCC400D19EAA /* freshmenShuttleMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF002719C3FCC400D19EAA /* freshmenShuttleMarker.png */; };
@@ -50,6 +48,8 @@
 		DDDF003119C3FCC400D19EAA /* grayNightShuttleMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF002A19C3FCC400D19EAA /* grayNightShuttleMarker.png */; };
 		DDDF003219C3FCC400D19EAA /* hanesShuttleMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF002B19C3FCC400D19EAA /* hanesShuttleMarker.png */; };
 		DDDF003A19C4030200D19EAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDF003919C4030200D19EAA /* Images.xcassets */; };
+		DDDF003F19C4101200D19EAA /* RTWLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF003D19C4101200D19EAA /* RTWLaunchImage.png */; };
+		DDDF004019C4101200D19EAA /* RTWLaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDF003E19C4101200D19EAA /* RTWLaunchImage@2x.png */; };
 		DDE48D161993CBD200581DF9 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE48D151993CBD200581DF9 /* libGoogleAnalyticsServices.a */; };
 		DDE48E411993D6BD00581DF9 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE48E401993D6BD00581DF9 /* GoogleMaps.framework */; };
 		DDE48E431993D6D900581DF9 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DDE48E421993D6D900581DF9 /* GoogleMaps.bundle */; };
@@ -142,8 +142,6 @@
 		DDDB052919817DB20074DC96 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DDDB052B19817E170074DC96 /* RTWmapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWmapViewController.h; sourceTree = "<group>"; };
 		DDDB052C19817E170074DC96 /* RTWmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWmapViewController.m; sourceTree = "<group>"; };
-		DDDF002019C3F0DB00D19EAA /* RTWLaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTWLaunchImage.png; sourceTree = "<group>"; };
-		DDDF002119C3F0DB00D19EAA /* RTWLaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWLaunchImage@2x.png"; sourceTree = "<group>"; };
 		DDDF002519C3FCC400D19EAA /* blackShuttleMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackShuttleMarker.png; sourceTree = "<group>"; };
 		DDDF002619C3FCC400D19EAA /* downtownShuttleMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downtownShuttleMarker.png; sourceTree = "<group>"; };
 		DDDF002719C3FCC400D19EAA /* freshmenShuttleMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = freshmenShuttleMarker.png; sourceTree = "<group>"; };
@@ -152,6 +150,8 @@
 		DDDF002A19C3FCC400D19EAA /* grayNightShuttleMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayNightShuttleMarker.png; sourceTree = "<group>"; };
 		DDDF002B19C3FCC400D19EAA /* hanesShuttleMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanesShuttleMarker.png; sourceTree = "<group>"; };
 		DDDF003919C4030200D19EAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DDDF003D19C4101200D19EAA /* RTWLaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RTWLaunchImage.png; sourceTree = "<group>"; };
+		DDDF003E19C4101200D19EAA /* RTWLaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RTWLaunchImage@2x.png"; sourceTree = "<group>"; };
 		DDE48D0B1993CB8A00581DF9 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		DDE48D0C1993CB8A00581DF9 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		DDE48D0D1993CB8A00581DF9 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
@@ -229,8 +229,8 @@
 				DDFC4D9D19A8C1DC0045CEAC /* RTWAppIcon-80.png */,
 				DDFC4D9E19A8C1DC0045CEAC /* RTWAppIcon-120.png */,
 				DDFC4D9F19A8C1DC0045CEAC /* RTWAppIcon-1024.png */,
-				DDDF002019C3F0DB00D19EAA /* RTWLaunchImage.png */,
-				DDDF002119C3F0DB00D19EAA /* RTWLaunchImage@2x.png */,
+				DDDF003D19C4101200D19EAA /* RTWLaunchImage.png */,
+				DDDF003E19C4101200D19EAA /* RTWLaunchImage@2x.png */,
 			);
 			path = img;
 			sourceTree = "<group>";
@@ -530,12 +530,13 @@
 				DDDF003019C3FCC400D19EAA /* grayDayShuttleMarker.png in Resources */,
 				DDA1209D19B176E90045C1B1 /* downtownShuttleIcon@2x.png in Resources */,
 				DDDF003A19C4030200D19EAA /* Images.xcassets in Resources */,
-				DDDF002319C3F0DB00D19EAA /* RTWLaunchImage@2x.png in Resources */,
+				DDDF003F19C4101200D19EAA /* RTWLaunchImage.png in Resources */,
 				DDE48E431993D6D900581DF9 /* GoogleMaps.bundle in Resources */,
 				DDA1209119B174870045C1B1 /* goldShuttleIcon@2x.png in Resources */,
 				DDDF002D19C3FCC400D19EAA /* downtownShuttleMarker.png in Resources */,
 				DDFC4DA019A8C1DC0045CEAC /* RTWAppIcon-58.png in Resources */,
 				DDDF002E19C3FCC400D19EAA /* freshmenShuttleMarker.png in Resources */,
+				DDDF004019C4101200D19EAA /* RTWLaunchImage@2x.png in Resources */,
 				DDA1209C19B176E90045C1B1 /* downtownShuttleIcon.png in Resources */,
 				DDDF002C19C3FCC400D19EAA /* blackShuttleMarker.png in Resources */,
 				DDA1209519B175B40045C1B1 /* hanesShuttleIcon@2x.png in Resources */,
@@ -546,7 +547,6 @@
 				DDA1208819B1735B0045C1B1 /* blackShuttleIcon.png in Resources */,
 				DDA1208C19B173E70045C1B1 /* grayShuttleIcon.png in Resources */,
 				DDA1209919B176420045C1B1 /* freshmenShuttleIcon@2x.png in Resources */,
-				DDDF002219C3F0DB00D19EAA /* RTWLaunchImage.png in Resources */,
 				DDFC4DA319A8C1DC0045CEAC /* RTWAppIcon-1024.png in Resources */,
 				DDFC4DA119A8C1DC0045CEAC /* RTWAppIcon-80.png in Resources */,
 				DDA1209819B176420045C1B1 /* freshmenShuttleIcon.png in Resources */,
