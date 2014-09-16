@@ -228,7 +228,7 @@
  
     _shuttleMarker.position = shuttleCoordinates;
     
-    _shuttleMarker.snippet = [NSString stringWithFormat:@"Updated at %@", [self printEasternTime:theDelegate.updateTime]];
+    _shuttleMarker.snippet = [NSString stringWithFormat:@"Updated at %@\nThere are %i passengers", [self printEasternTime:theDelegate.updateTime], theDelegate.numOfPassengers];
     
     [NSTimer scheduledTimerWithTimeInterval:7.0 target:self selector:@selector(loadShuttlesCurrentLocation:) userInfo:nil repeats:YES];
 

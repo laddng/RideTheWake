@@ -41,6 +41,8 @@
         
         _updateTime = [timeFormat dateFromString:[attributeDict valueForKey:@"time"]];
         
+        _numOfPassengers = [[attributeDict valueForKey:@"passenger"] intValue];
+        
     }
     
 }

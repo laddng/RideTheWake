@@ -21,6 +21,8 @@
 
 @property NSDate *updateTime;
 
+@property int numOfPassengers;
+
 - (RTWShuttleCoordinatesDelegate*) initXMLParser;
 
 @end
