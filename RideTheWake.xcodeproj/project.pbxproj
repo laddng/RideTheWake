@@ -11,6 +11,8 @@
 		DD0915E519B0B58200169C83 /* wfuLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = DD0915E319B0B58200169C83 /* wfuLogo.png */; };
 		DD0915E619B0B58200169C83 /* wfuLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD0915E419B0B58200169C83 /* wfuLogo@2x.png */; };
 		DD0EB70A198FE5DD00A238AB /* RTWrouteInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0EB709198FE5DD00A238AB /* RTWrouteInformation.m */; };
+		DD8325C319C85EDA00C82A0F /* 4inch.png in Resources */ = {isa = PBXBuildFile; fileRef = DD8325C119C85EDA00C82A0F /* 4inch.png */; };
+		DD8325C419C85EDA00C82A0F /* 35inch.png in Resources */ = {isa = PBXBuildFile; fileRef = DD8325C219C85EDA00C82A0F /* 35inch.png */; };
 		DD8D668319B444490030B6B8 /* RTWShuttleCoordinatesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8D668219B444490030B6B8 /* RTWShuttleCoordinatesDelegate.m */; };
 		DD8D668719B4450B0030B6B8 /* RTWShuttleInfoDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8D668619B4450B0030B6B8 /* RTWShuttleInfoDelegate.m */; };
 		DD8D668A19B454FA0030B6B8 /* RTWShuttleStopsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8D668919B454FA0030B6B8 /* RTWShuttleStopsDelegate.m */; };
@@ -91,6 +93,8 @@
 		DD0915E419B0B58200169C83 /* wfuLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wfuLogo@2x.png"; sourceTree = "<group>"; };
 		DD0EB708198FE5DD00A238AB /* RTWrouteInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWrouteInformation.h; sourceTree = "<group>"; };
 		DD0EB709198FE5DD00A238AB /* RTWrouteInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWrouteInformation.m; sourceTree = "<group>"; };
+		DD8325C119C85EDA00C82A0F /* 4inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4inch.png; sourceTree = "<group>"; };
+		DD8325C219C85EDA00C82A0F /* 35inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 35inch.png; sourceTree = "<group>"; };
 		DD8D668119B444490030B6B8 /* RTWShuttleCoordinatesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWShuttleCoordinatesDelegate.h; sourceTree = "<group>"; };
 		DD8D668219B444490030B6B8 /* RTWShuttleCoordinatesDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTWShuttleCoordinatesDelegate.m; sourceTree = "<group>"; };
 		DD8D668519B4450B0030B6B8 /* RTWShuttleInfoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWShuttleInfoDelegate.h; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 		DD1FD58C1989954E00ED6AEF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				DD8325C119C85EDA00C82A0F /* 4inch.png */,
+				DD8325C219C85EDA00C82A0F /* 35inch.png */,
 				DDDF002419C3FCC400D19EAA /* shuttleMarkers */,
 				DDA1207D19B1718B0045C1B1 /* shuttleIcons */,
 				DD0915E319B0B58200169C83 /* wfuLogo.png */,
@@ -542,6 +548,7 @@
 				DDA1209519B175B40045C1B1 /* hanesShuttleIcon@2x.png in Resources */,
 				DDDB04FD19817DA00074DC96 /* InfoPlist.strings in Resources */,
 				DDA1209419B175B40045C1B1 /* hanesShuttleIcon.png in Resources */,
+				DD8325C319C85EDA00C82A0F /* 4inch.png in Resources */,
 				DD0915E519B0B58200169C83 /* wfuLogo.png in Resources */,
 				DDDF003119C3FCC400D19EAA /* grayNightShuttleMarker.png in Resources */,
 				DDA1208819B1735B0045C1B1 /* blackShuttleIcon.png in Resources */,
@@ -554,6 +561,7 @@
 				DDA1209019B174870045C1B1 /* goldShuttleIcon.png in Resources */,
 				DDDB050619817DA00074DC96 /* Main.storyboard in Resources */,
 				DDDF002F19C3FCC400D19EAA /* goldShuttleMarker.png in Resources */,
+				DD8325C419C85EDA00C82A0F /* 35inch.png in Resources */,
 				DDDF003219C3FCC400D19EAA /* hanesShuttleMarker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
